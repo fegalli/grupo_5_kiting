@@ -12,7 +12,7 @@ Nivel socioeconómico: C2 / ABC1 (clase media-alta, clase alta respectivamente)
 Adopción a la tecnología: Buena. Estas personas saben desenvolverse en facebook y comprar en mercadolibre.
 Plataformas: Se espera una preferencia por el uso de mobile
 
-
+***
 Integrantes del equipo: 
 **Micaela Lezica**
 Licenciada en Economía empresarial (UTDT) y desarrollo profesional en tech companies. Actualmente Product & Growth Manager Wabi-YOP.
