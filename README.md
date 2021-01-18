@@ -1,16 +1,16 @@
 
-KITING
+**KITING**
 
 Kiting es una plataforma de compra-venta de productos nuevos y usados relacionados al kitesurf y tiene como objetivo hacer crecer la comunidad a través de la accesibilidad al equipo. 
 
 
 Público Objetivo:
-*Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf
-*Edad: 18-55
-*Sexo: Indistinto
-*Nivel socioeconómico: C2 / ABC1 (clase media-alta, clase alta respectivamente)
-*Adopción a la tecnología: Buena. Estas personas saben desenvolverse en facebook y comprar en mercadolibre.
-*Plataformas: Se espera una preferencia por el uso de mobile
+*Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf*
+*Edad: 18-55*
+*Sexo: Indistinto*
+*Nivel socioeconómico: C2 / ABC1 (clase media-alta, clase alta respectivamente)*
+*Adopción a la tecnología: Buena. Estas personas saben desenvolverse en facebook y comprar en mercadolibre.*
+*Plataformas: Se espera una preferencia por el uso de mobile*
 
 
 Integrantes del equipo: 
