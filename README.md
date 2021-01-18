@@ -3,6 +3,7 @@
 
 Kiting es una plataforma de compra-venta de productos nuevos y usados relacionados al kitesurf y tiene como objetivo hacer crecer la comunidad a través de la accesibilidad al equipo. 
 
+***
 
 Público Objetivo:
 -Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf
@@ -21,6 +22,7 @@ Licenciada en Economía empresarial (UTDT) y desarrollo profesional en tech comp
 **Federico Galli**
 Ingeniero industrial (ITBA) y desarrollo profesional en tech companies. Actualmente líder Wabipay. 
 
+***
 Paginas Inspiracionales:
 
 Airbnb:https://www.airbnb.com.ar/
