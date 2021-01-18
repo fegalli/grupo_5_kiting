@@ -1,11 +1,13 @@
 
-**KITING**
+# KITING
+
+## Acerca del proyecto: 
 
 Kiting es una plataforma de compra-venta de productos nuevos y usados relacionados al kitesurf y tiene como objetivo hacer crecer la comunidad a través de la accesibilidad al equipo. 
 
 ***
 
-Público Objetivo:
+### Público Objetivo:
 
 * Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf
 * Edad: 18-55
@@ -15,7 +17,7 @@ Público Objetivo:
 * Plataformas: Se espera una preferencia por el uso de mobile
 
 ***
-Integrantes del equipo: 
+###Integrantes del equipo: 
 
 **Micaela Lezica**
 Licenciada en Economía empresarial (UTDT) y desarrollo profesional en tech companies. Actualmente Product & Growth Manager Wabi-YOP.
