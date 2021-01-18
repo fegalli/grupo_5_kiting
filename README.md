@@ -7,9 +7,8 @@ Kiting es una plataforma de compra-venta de productos nuevos y usados relacionad
 
 Público Objetivo:
 
-Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf
-
-Edad: 18-55
+* Zona geográfica: República de la Argentina con foco en los grandes centros metropolitanos y zonas aptas para el deporte kitesurf
+* Edad: 18-55
 
 Sexo: Indistinto
 
