@@ -32,7 +32,7 @@ Ingeniero industrial (ITBA) y desarrollo profesional en tech companies. Actualme
 ***
 Paginas Inspiracionales:
 
-Airbnb:https://www.airbnb.com.ar/
-North: https://www.northkb.com/en/products/kites/carve-surf-strapless-freestyle
-Duotone: https://www.duotonesports.com/kiteboarding/kites/dice/
-Cabrinha: https://www.cabrinha.com/collections/kites/products/drifter
+1.Airbnb:https://www.airbnb.com.ar/
+2.North: https://www.northkb.com/en/products/kites/carve-surf-strapless-freestyle
+3.Duotone: https://www.duotonesports.com/kiteboarding/kites/dice/
+4.Cabrinha: https://www.cabrinha.com/collections/kites/products/drifter
