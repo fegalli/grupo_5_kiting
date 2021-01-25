@@ -33,3 +33,8 @@ Ingeniero industrial (ITBA) y desarrollo profesional en tech companies. Actualme
 2. North: https://www.northkb.com/en/products/kites/carve-surf-strapless-freestyle
 3. Duotone: https://www.duotonesports.com/kiteboarding/kites/dice/
 4. Cabrinha: https://www.cabrinha.com/collections/kites/products/drifter
+
+***
+### Trello
+
+Link a trello: https://trello.com/b/dqhSkZz7/kiting
