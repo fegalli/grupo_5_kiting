@@ -1,0 +1,20 @@
+{
+  "name": "grupo_5_kiting",
+  "version": "1.0.0",
+  "description": "### Acerca del proyecto:",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fegalli/grupo_5_kiting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fegalli/grupo_5_kiting/issues"
+  },
+  "homepage": "https://github.com/fegalli/grupo_5_kiting#readme"
+}
