@@ -1,0 +1,9 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0 ;
+}
+
+section,article,h2,p{
+    border-color: blue;
+}
