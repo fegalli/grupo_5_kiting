@@ -1,0 +1,25 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0 ;
+}
+img{
+    width: 100%;
+}
+section{
+    width:100%;
+    display: flex;
+}
+header,footer{
+    background-color: grey;
+}
+.presentation{
+    background-image:url("../img/home-surf.jpg");
+    background-size:cover ;
+    width: 100%;
+}
+.airbnb-box{
+    width: 30vw;
+    background-color:blue;
+    margin: auto;
+}
