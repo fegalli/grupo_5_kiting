@@ -1,7 +1,14 @@
 *{
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
-    margin: 0 ;
+    margin: 0px;
+    padding: 0px;
+    margin: 0 ; 
+    background-color: #EFEBEE;
+}
+main{
+    max-width: 1279px;
+    margin: auto;
 }
 img{
     width: 100%;
@@ -14,12 +21,24 @@ header,footer{
     background-color: grey;
 }
 .presentation{
-    background-image:url("../img/home-surf.jpg");
-    background-size:cover ;
-    width: 100%;
+    background-image:url("../img/raphael-nogueira-Cl-TBR7N0oQ-unsplash.jpg");
+    height: 510px;
+    background-size: 1279px;    
 }
 .airbnb-box{
-    width: 30vw;
-    background-color:blue;
-    margin: auto;
+    height: 408px;
+    margin: 20px;
+    background-color:#EFEBEE;
+    border-radius: 2%;
+    box-shadow: 0px 0px 40px rgb(133, 120, 120)
 }
+.airbnb-box{
+    padding: 12px;
+}
+#title-airbnb-box{
+    padding: 12px;
+}
+
+
+
+/*MEDIA QUERIES*/
