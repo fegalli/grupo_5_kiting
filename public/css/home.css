@@ -9,9 +9,14 @@
 main{
     max-width: 1279px;
     margin: auto;
+    width: 90vw; 
 }
 img{
-    width: 100%;
+    width: 100%;  
+}
+.kiting-style{
+    height: 288px;
+    flex-direction: column;
 }
 section{
     width:100%;
@@ -23,22 +28,32 @@ header,footer{
 .presentation{
     background-image:url("../img/raphael-nogueira-Cl-TBR7N0oQ-unsplash.jpg");
     height: 510px;
-    background-size: 1279px;    
+    background-size: 1279px;  
 }
 .airbnb-box{
     height: 408px;
     margin: 20px;
     background-color:#EFEBEE;
     border-radius: 2%;
-    box-shadow: 0px 0px 40px rgb(133, 120, 120)
-}
-.airbnb-box{
+    box-shadow: 0px 0px 40px rgb(133, 120, 120);
     padding: 12px;
 }
 #title-airbnb-box{
     padding: 12px;
 }
+.kiting-style-figures{
 
+}
 
 
 /*MEDIA QUERIES*/
+
+/* PARA CUANDO HAGA EL > 740 
+#figure-surf{
+    width: 180%;
+    height: 340px;
+    margin: 20px;
+    background-image: url('../img/home-surf.jpg');
+    border-radius: 2%;
+    padding: 120px;
+*/
