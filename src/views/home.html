@@ -20,17 +20,56 @@
             <div class="airbnb-box">
                 <h1 id="title-airbnb-box">Encuentra tu próximo equio en Kiting</h1>
                 <p id="description-airbnb-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p> 
-                <form  class="formulario" action="/" method="POST"> <!--ESTO ES SOLO UN TEMPLATE (MERCADOLIEBRE)-->
+                <br>
+                <form  class="formulario" action="/" method="POST"> 
                     <div>
-                        <label for="Usuario">usuario</label>
+                        <label for='product'>¿Qué estas buscando?</label><br>
+                        <div class='form-level1'> <!--este div me permite tener la primer pregunta en un solo renglon -->
+                            <input type="radio" name = "product" id="product"  value="equipo-completo">Equipo completo</option>
+                            <input type="radio" name = "product" id="product"  value="vela">Vela</option>
+                            <input type="radio" name = "product" id="product"  value="barra">Barra</option>
+                            <input type="radio" name = "product" id="product"  value="tabla">Tabla</option>
+                            <input type="radio" name = "product" id="product"  value="arnes">Arnes</option>
+                        </div>
                         <br>
-                        <input type="text"  id="usuario" name="usuario" placeholder="Usuario" required>
-                        <br>
-                        <label for="password">Contraseña</label>
-                        <br>
-                        <input type="password"  id="password" name="password" placeholder="Indique su contraseña" minlength='2' title='La contraseña debe tener al menos 2 caracteres'>
-                        <div id="boton-login">
-                            <a href="/"><input type= "submit" value="Enviar"></a>
+                        <div class="form-level2"> <!--este div me permite tener la pregunta 2 y 3 en el mismo renglon -->
+                            <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
+                                <label for="kie-style">¿Qué estilo estas buscando?</label><Br>
+                                    <select name="style">
+                                        <option id="style" value="freeride">Freeride</option>
+                                        <option id="style" value="surf">Surf</option>
+                                        <option id="style" value="freestyle">Freestyle</option>
+                                        <option id="style" value="foil">Foil</option>
+                                        <option id="style" value="all" selected>Todos</option>
+                                    </select>
+                            </div>
+                            <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
+                            <label for="brand">¿Qué tamaño estas buscando?</label><Br>
+                                <select name="brand">
+                                    <option id="brand" value="all" selected>Todos</option>               
+                                    <option id="brand" value="north">North</option>
+                                    <option id="brand" value="duotone">Duotone</option>
+                                    <option id="brand" value="cabrinha">Cabrinha</option>
+                                </select>  
+                             </div>
+                        </div>
+                        <div class="form-level3">
+                            <div class="form-level3-element">
+                                <label for="size">¿Qué tamaño estas buscando?</label><Br>
+                                    <select name="size">                       
+                                        <option id="size" value="all" selected>Todos</option>
+                                        <option id="size" value="completar">necesita js/db</option>
+                                    </select>
+                            </div>
+                            <div class="form-level3-element">
+                                <label for="colour">¿Qué color estas buscando?</label><Br>
+                                <select name="colour">
+                                    <option id="colour" value="all" selected>Todos</option>
+                                    <option id="colour" value="completar">necesita js/db</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><button type="submit" id='form-button-enviar'>Buscar</button>
                     </div>
                 </form>
             </div>
@@ -39,19 +78,19 @@
         <section class="kiting-style">
             <article id="article-surf">
                 <h2 id="title-surf">El surf es todo lo que esta bien</h2>
-                <p id="description-surf">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa</p>    
+                <p id="description-surf">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>    
             </article>
-            <figure class="kiting-style-figures" id="figure-freeride"><img src="../../public/img/home-surf.jpg"  alt="kitesurf freeride example"></figure>
+            <figure class="kiting-style-figures" id="figure-surf"></figure>
         </section>
         <br>
         <hr style="width:90%;margin:auto">
         <br>
-        <section class="kiting-style">
-            <article id="article-surf">
-                <h2 id="title-surf">El surf es todo lo que esta bien</h2>
-                <p id="description-surf">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa</p>    
+        <section class="kiting-style" id="kiting-style-freestyle">
+            <article id="article-freestyle">
+                <h2 id="title-freestyle">El freestyle es todo lo que esta bien</h2>
+                <p id="description-freestyle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>    
             </article>
-            <figure class="kiting-style-figures" id="figure-freeride"><img src="../../public/img/home-surf.jpg"  alt="kitesurf freeride example"></figure>
+            <figure class="kiting-style-figures" id="figure-freestyle"></figure>
         </section>
         <br>
         <hr style="width:90%;margin:auto">
@@ -59,11 +98,13 @@
         <section class="kiting-style">
             <article id="article-freeride">
                 <h2 id="title-freeride">El freeride es todo lo que esta bien</h2>
-                <p id="description-freeride">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa</p>
+                <p id="description-freeride">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </article>
-            <figure class="kiting-style-figures" id="figure-freeride"><img src="../../public/img/home-surf.jpg"  alt="kitesurf freeride example"></figure>
+            <figure class="kiting-style-figures" id="figure-freeride"></figure>
         </section>
+        <br>
     </main>
+    <br>
     <footer>Aca va el footer</footer>     
 </body>
 </html>
