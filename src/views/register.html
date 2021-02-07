@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../../public/css/register.css">
     <title>KITING</title>
 </head>
 <header>
@@ -18,18 +18,19 @@
     <nav class = "loginForm">
         <div class = "userIcon"> <i  class="fas fa-user"></i></div>
         <div class = "border"></div>
-        <div class="ContentForm">
+        <div class="ContentForm"></div>
             <div class="crearCuenta">Create account</div>
-            <form action="" method="post" name="FormEntrar">             
-                 <input class ="emailForm" type="email" class="form-control" name="correo" placeholder="Email/Username" id="Correo"  required>
-               </div>
+            <form action="home.html" method="post" name="FormEntrar">   
+                 
+                 <input class ="emailForm" type="usuario" class="form-control" name="correo" placeholder="Email/Username" id="Correo"  required>
                <br>
                 <input class= "contraseña"type="password" name="contra" class="form-control" placeholder="Password"  required>
-               </div>
+            
                <input class ="confirmarcontraseña" type="password" name=contra placeholder = "Repeat password" required>
                <br>
+            
                <button class = "submitBottom" type="submit"><b>SIGN IN ></b></button>
-               <div  class= "registro"><a href="">Already have an account? LOG IN</a></div>
+               <div  class= "registro"><a href="../views/login.html">Already have an account? LOG IN</a></div>
                
             </form>
         </div>	
@@ -37,5 +38,5 @@
 
     </nav>
 </body>
-<footer>Acá va el footer</footer>
+
 </html>
