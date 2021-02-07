@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/fegalli/grupo_5_kiting/issues"
   },
-  "homepage": "https://github.com/fegalli/grupo_5_kiting#readme"
+  "homepage": "https://github.com/fegalli/grupo_5_kiting#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
 }
