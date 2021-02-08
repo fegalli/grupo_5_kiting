@@ -1,0 +1,127 @@
+*{
+    width:100%;
+   
+}
+
+img{
+    width: auto;
+    height: auto;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 2px#51515F;
+    vertical-align: middle;
+    height: 3em;
+    width: 1;
+    margin:1px;
+    font-family: "Ubuntu";
+    float:none;  
+   
+    }
+
+.logoHeader{
+    text-align:left;
+    font-size: 3vh;
+}
+
+.homeHeader{
+    text-align: right;
+    font-size: 3vh;
+
+}
+
+.contactUsHeader {
+    text-align: right;
+    font-size: 3vh;
+}
+
+.loginForm{
+    width: 16em;
+	margin: 50px auto;
+	background-color:white;
+    border: 1px solid #51515F;
+	height: auto;
+	border-radius:2%;
+    box-shadow:0px 0px 20px rgb(141, 140, 140);
+    
+  }
+
+  
+  .userIcon{
+    color:black;   
+    display: block;
+    text-align: center;
+    margin: auto; 
+    width: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    border-color: black;
+}
+
+.border {
+    border:solid 1px #51515F
+}
+
+.contentForm{
+    background-color: white;
+}
+.crearCuenta{
+    margin-top: 1em;
+    margin-bottom: 20px;
+    background-color:white;
+}
+
+
+.emailForm{
+    text-align: center;  
+    width: fit-content;
+    margin-left: 40px;
+    height: 1.5em;
+    background-color: white;
+
+
+}
+
+.contraseña{
+    text-align: center;
+    margin-top: 5px;
+    margin-left:40px;
+    width: max-content;
+    height: 1.5em;
+    background-color: white;
+
+    
+}
+
+.confirmarcontraseña{
+    text-align: center;
+    margin-top: 5px;
+    width: fit-content;
+    margin-left: 40px;
+    height: 1.5em;
+    background-color: white;
+
+    
+}
+
+.submitBottom{
+    margin-top: 20px;
+    background-color: #7289AB;
+    color: white;
+    width: 100%;
+    height: 3em;
+}
+
+.registro{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: white;
+}
+.opcioncontra{
+	text-align: center;
+	font-size: 14px;
+}
