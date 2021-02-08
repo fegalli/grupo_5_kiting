@@ -4,7 +4,7 @@
     margin: 0px;
     padding: 0px;
     margin: 0 ; 
-    background-color: #EFEBEE;
+    background-color:  #EFEBEE  ;
 }
 main{
     max-width: 1279px;
@@ -14,13 +14,12 @@ main{
 img{
     width: 100%;  
 }
+
 section{
     width:100%;
     display: flex;
 }
-header,footer{
-    background-color: grey;
-}
+
 
 .airbnb-box{  
     width: 100vw;  /* Este campo es el que se debe modificar con la media query */
@@ -84,6 +83,67 @@ article{
 p{
     text-align: justify;
 }
+
+/* -------------- HEADER Y FOOTER -------------------- */
+
+header{
+    height: 48px;
+    border-style:solid;
+    border-bottom-width: 2px;
+    float:none;
+    border-color: #EFEBEE;
+    border-bottom-color: #51515F;
+    background-color: #EFEBEE;
+}
+footer{
+    height: 48px;
+    border-style:solid;
+    border-bottom-width: 2px;
+    float:none;
+    border-color: #EFEBEE;
+    border-top-color: #51515F;
+    background-color: #EFEBEE;
+}
+.header{
+    width: 90vw;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    width: 90vw;
+    margin:auto
+}
+#logo-kiting{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    color:#101014;
+}
+.header-links{
+    display: none;
+    font-size: 12px;
+    width: fit-content;
+    color:#101014;
+}
+a{
+    margin:auto;
+    padding: 8px;
+}
+/* -----------MEDIA QUERIES HEADER & FOOTER-----------------------*/
+    /* Tablets */
+    @media (min-width:481px){
+        .header-links{
+            display: inline ;
+        }
+        .header{
+            justify-content: space-between;
+        }  
+    }
+
+
 /* -----------MEDIA QUERIES-----------------------*/
 
    /*desktop*/
@@ -95,7 +155,7 @@ p{
         background-size: 1279px;  
     }
     .airbnb-box{
-        height: 352px; /*comportamiento airbnb */
+        height: 368px; /*comportamiento airbnb */
         width: 544px;
         margin: 20px;
         border-radius: 2%;     
@@ -125,6 +185,4 @@ p{
         margin-right: 16px;
         width: 180%;
     }
-
-
 }
