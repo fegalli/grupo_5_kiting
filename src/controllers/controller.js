@@ -9,6 +9,12 @@ module.exports = {
     },
     register : (req, res)=>{
         return res.sendFile(path.resolve(__dirname,'../views/register.html'))
+    },
+    productCart : (req, res)=>{
+        return res.sendFile(path.resolve(__dirname,'../views/productCart.html'))
+    },
+    productDetail : (req, res)=>{
+        return res.sendFile(path.resolve(__dirname,'../views/productDetail.html'))
     }
 }
  
