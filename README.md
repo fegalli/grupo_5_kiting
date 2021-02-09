@@ -1,6 +1,9 @@
 
 # KITING
 
+### Link Heroku
+https://grupo5kiting.herokuapp.com/
+
 ### Acerca del proyecto: 
 
 Kiting es una plataforma de compra-venta de productos nuevos y usados relacionados al kitesurf y tiene como objetivo hacer crecer la comunidad a través de la accesibilidad al equipo. 
