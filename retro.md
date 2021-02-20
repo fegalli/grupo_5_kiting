@@ -24,7 +24,7 @@ Cuando? Dia posterior a entrega 2
 Mejorar las entregas de sprint anteriores, por llegar corriendo a la entrega dejamos cosas con oportunidad de mejora. 
 
 #### Hacer más
-Las reuniones que estamos teniendo de trabajo en conjunto podriamos hacerlas de manera más periodica para no llegar a la entrega del sprint corriendo
+Las reuniones que estamos teniendo de trabajo en conjunto podriamos hacerlas de manera más periodica para no llegar a la entrega del sprint corriendo.
 
 #### Continuar haciendo
 Con conversaciones cotidianas.
