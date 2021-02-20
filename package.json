@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fegalli/grupo_5_kiting#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {}
