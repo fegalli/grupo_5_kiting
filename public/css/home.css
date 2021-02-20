@@ -44,8 +44,8 @@ form{
 }
 .form-level2-element,.form-level3-element{
     width: 50%;
-}
-/* ^ (Con esta configuracion logro que el formulario se vea con 'niveles') */
+}   
+        /* FIN: ^ (Con esta configuracion logro que el formulario se vea con 'niveles') */
 #form-button-enviar{
     width:100%;
     height: 36px;
@@ -54,7 +54,7 @@ form{
     /*height: 288px; ACA LE DOY UN TAMAÑO A LAS SECCIONES DE LA HOME*/
     flex-direction: column;
 }
-
+/* Grandes imagenes de la home */
 #figure-surf{
     height: 240px;
     border-radius: 2%;
@@ -72,6 +72,16 @@ form{
     border-radius: 2%;
     background-image: url("../img/home-freeride.jpg");
     background-position: center;
+}
+
+/* Botones de compra de la home */
+.button-comprar{
+    padding: 8px;
+    border-radius: 2%;
+    position: relative;
+    left: 32px;
+    top: 32px;
+
 }
 article{
     padding-bottom: 24px;
@@ -93,7 +103,8 @@ header{
     float:none;
     border-color: #EFEBEE;
     border-bottom-color: #51515F;
-    background-color: #EFEBEE;
+    background-color: transparent;
+    display: run-in;
 }
 footer{
     height: 48px;
@@ -132,6 +143,7 @@ a{
     margin:auto;
     padding: 8px;
 }
+
 /* -----------MEDIA QUERIES HEADER & FOOTER-----------------------*/
     /* Tablets */
     @media (min-width:481px){
