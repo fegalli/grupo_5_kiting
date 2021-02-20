@@ -1,31 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head') %>
     <link rel="stylesheet" href="../../css/productDetail.css">
-    <title>Grupo_5_kiting</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">  <!--
-        CSS rules to specify families font-family: 'Open Sans', sans-serif; -->
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> <!--
-        CSS rules to specify families font-family: font-family: 'Ubuntu', sans-serif;
-     -->
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div id="logo-kiting">KITING</div>
-            <div class="header-links">
-                <a href="/">Pagina principal</a>
-                <a href="/login">Ingresá</a>
-                <a href="/register">Registrate</a>
-                <a href="/productDetail">¡Mas vendido!</a>
-                <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-            </div> 
-        </div>
-    </header>        
+    <!--HEADER--> <%- include('./partials/header') %>     
     <main>
         <h1 id="product-title">CARVE 2021</h1>
         <h2 id='product-style'>SURF / STRAPLESS FREE</h2>
@@ -61,9 +41,6 @@
     </main>
     </main>
     <br>
-    <footer>
-        <div class="footer">
-        </div>
-    </footer>     
+    <!-- FOOTER --> <%- include('./partials/footer') %> 
 </body>
 </html>

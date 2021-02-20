@@ -4,6 +4,12 @@ const path = require('path');
 
 // Seteo de elementos estaticos 
 app.use(express.static(path.resolve(__dirname, '../public')));
+    // Los recursos estaticos son aquellos que no pasan por el proceso de renderizado y que son cargados directamente
+    // por el cliente, ej imagenes, css, js, etc. Para poder acceder aellos en nuestras vistas hace falta aclararle
+    // a express donde vamos aestar almancenado esos recuersos.
+    // para acceder a alguno de estos recursos desde nuestras vistas solo hace falta aclarar la ruta a dicho recurso. Por que? 
+    // por que express ya sabe que nuestros recursos estaticos se alancenan en la carpeta -public- y buscara los archivos
+    // a partir de esa carpeta.
 
 // Llamado de rutas
 const router = require('../src/routers/router');

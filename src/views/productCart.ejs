@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head') %>
     <link rel="stylesheet" href="../../css/productCart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">  <!--
-        CSS rules to specify families font-family: 'Open Sans', sans-serif; -->
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> <!--
-        CSS rules to specify families font-family: font-family: 'Ubuntu', sans-serif;
-     -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <title>Kiting</title>
 </head>
-<header>
+<!-- <header>
         <h1 class = 'logoHeader'>KITING</h1>
         <h1 class = "homeHeader" ><a href="/">Home</a></h1>
         <h1 class ="homeHeader" ><a href="/login">Ingresá</a></h1>
         <h1 class ="homeHeader"><a href="/register">Registrate</a></h1>
-</header> 
+</header>  -->
 <body>
-   
+    <!--HEADER--> <%- include('./partials/header') %> 
+    <main>
     <nav class="cartConteiner">
        <nav class = "form">
         <div class ="titleCart">Lorem ipsum dolo</div>
@@ -58,10 +49,7 @@
         <button class = "buyButton" type="submit">BUY</button>
     </nav>
     </nav>
-    
+</main>
+   <!-- FOOTER --> <%- include('./partials/footer') %> 
 </body>
-<footer>
-    <div class="footer">
-    </div>
-</footer>     
 </html>

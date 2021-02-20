@@ -1,0 +1,19 @@
+/* -------------- FOOTER -------------------- */
+footer{
+    height: 48px;
+    border-style:solid;
+    border-bottom-width: 2px;
+    float:none;
+    border-color: #EFEBEE;
+    border-top-color: #51515F;
+    background-color: #EFEBEE;
+}
+.footer{
+    width: 90vw;
+    margin:auto
+}
+a{
+    margin:auto;
+    padding: 8px;
+}
+/* -----------MEDIA QUERIES FOOTER-----------------------*/

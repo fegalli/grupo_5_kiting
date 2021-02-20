@@ -1,13 +1,13 @@
-*{
-    width: 100%;
-    
+ *{
+    /* width: 100%; */
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     margin: 0 ; 
-}
-header{
+} 
+
+/* header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,7 +18,7 @@ header{
     margin:1px;
     font-family: "Ubuntu";
     float:none;  
-   
+
 }
 footer{
     height: 48px;
@@ -29,7 +29,6 @@ footer{
     border-top-color: #51515F;
     background-color: #EFEBEE;
 }
-
 .footer{
     width: 90vw;
     margin:auto
@@ -38,11 +37,10 @@ footer{
 .homeHeader{
 text-align: right;
 font-size: 3vh;
+} */
 
-}
 .cartConteiner{
  background-color: white;
-    
 }
 
 .form{

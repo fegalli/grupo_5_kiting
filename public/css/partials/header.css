@@ -1,0 +1,45 @@
+
+/* -------------- HEADER -------------------- */
+header{
+    height: 48px;
+    border-style:solid;
+    border-bottom-width: 2px;
+    float:none;
+    border-color: #EFEBEE;
+    border-bottom-color: #51515F;
+    background-color: transparent;
+    display: run-in;
+}
+
+.header{
+    width: 90vw;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+}
+
+#logo-kiting{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    color:#101014;
+}
+.header-links{
+    display: none;
+    font-size: 12px;
+    width: fit-content;
+    color:#101014;
+}
+
+/* -----------MEDIA QUERIES HEADER -----------------------*/
+    /* Tablets */
+    @media (min-width:481px){
+        .header-links{
+            display: inline ;
+        }
+        .header{
+            justify-content: space-between;
+        }  
+    }
