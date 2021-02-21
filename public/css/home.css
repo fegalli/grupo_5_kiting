@@ -4,7 +4,7 @@
     margin: 0px;
     padding: 0px;
     margin: 0 ; 
-    background-color:  #EFEBEE  ;
+    background-color:  #ffffff ;
 }
 main{
     max-width: 1279px;
@@ -13,6 +13,10 @@ main{
 }
 img{
     width: 100%;  
+}
+h1{
+    color: #222222;
+    text-shadow: 0.1px 0.1px  #d7d7d7;
 }
 
 section{
@@ -75,20 +79,32 @@ form{
 
 /* Botones de compra de la home */
 .button-comprar{
-    padding: 8px;
-    border-radius: 2%;
     position: relative;
+    background-color:#ffffff;
+    padding: 10px;
     left: 32px;
     top: 32px;
-
+    height: 40px;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: #727272;
+    border-style: solid;
 }
+
+.a-comprar{
+    background-color: white;
+
+    text-decoration: none; /* le pido que no este subrayado */
+    color: inherit; /* le pido que el color sea igual que todo el resto de la pagina */
+    margin: auto;
+}
+
 article{
     padding-bottom: 24px;
     margin-top: auto;
     margin-bottom: auto;
     text-align: justify;
 }
-
 p{
     text-align: justify;
 }
