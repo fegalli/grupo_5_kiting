@@ -16,6 +16,9 @@ module.exports = {
     },
     productDetail : (req, res)=>{
         return res.render('productDetail')
+    },
+    creacionProductos : (req,res) => {
+        return res.render('creacionProductos')
     }
 }
  
