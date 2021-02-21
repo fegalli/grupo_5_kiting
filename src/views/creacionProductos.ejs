@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/creacionProductos.css">
+    <%- include('./partials/head') %>
+    <title>Document</title>
+</head>
+<body>
+     <!--HEADER--> <%- include('./partials/header') %> 
+    <form  class="formulario" action="/" method="POST"> 
+        
+            <div class = "titulo">¿Qué nuevo producto queres cargar?</div>
+            <div><label for ="product" class= "tipo"> Tipo de producto</label>
+            <div class='form-level1'> <!--este div me permite tener la primer pregunta en un solo renglon -->
+                <input type="radio" name = "product" id="product"  value="equipo-completo">Equipo completo</option>
+                <input type="radio" name = "product" id="product"  value="vela">Vela</option>
+                <input type="radio" name = "product" id="product"  value="barra">Barra</option>
+                <input type="radio" name = "product" id="product"  value="tabla">Tabla</option>
+                <input type="radio" name = "product" id="product"  value="arnes">Arnes</option>
+                <input type="radio" name = "product" id="product"  value="arnes">Otro</option>
+            </div></div>
+            <div class="descripcion">
+                <label for="descripcion"> Descripción del producto</label>
+                <nav><textarea name="comentarios" rows="10" cols="40" placeholder="Escribe aqui la descripcion del producto"></textarea></nav>
+            </div>
+            <div class="imagen">
+               <label for="imagen"> Imagen del producto</label> 
+                <div><input style= "background-color: white" type="file" name="imagen" /></div>
+            </div>
+            <div class="tamaño">
+            <label for="brand">Tamaño del producto</label><Br>
+                <select name="brand">
+                    <option id="brand" value="all" selected>Todos</option>               
+                    <option id="brand" value="north">North</option>
+                    <option id="brand" value="duotone">Duotone</option>
+                    <option id="brand" value="cabrinha">Cabrinha</option>
+                </select>  </div>
+            <div>
+            <div class ="precio">
+            <label for="precio">Precio del producto</label></div>
+            <div><input type="number" name = "price"> </div></div>
+            <button type="submit" id='form-button-enviar'>Publicar</button>
+    </form>
+
+    <!-- FOOTER --> <%- include('./partials/footer') %> 
+</body>
+</html>
