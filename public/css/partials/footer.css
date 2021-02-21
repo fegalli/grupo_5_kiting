@@ -12,8 +12,18 @@ footer{
     width: 90vw;
     margin:auto
 }
+/* --- Comento esto porque hace que se me rompan los links 
 a{
     margin:auto;
     padding: 8px;
+}
+*/
+.admin{
+ font-weight: 700;
+ margin-top: 2em;
+}
+
+.nuevoProducto{
+    margin-top: 1em;
 }
 /* -----------MEDIA QUERIES FOOTER-----------------------*/
