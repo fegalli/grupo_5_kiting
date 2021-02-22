@@ -17,8 +17,16 @@ img{
 h1{
     color: #222222;
     text-shadow: 0.1px 0.1px  #d7d7d7;
+    text-align: left;
+    margin-bottom: 0px;
+    padding: 0px;
 }
-
+#description-airbnb-box{
+    text-align: left;
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-top: 0;
+}
 section{
     width:100%;
     display: flex;
@@ -41,6 +49,24 @@ form{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.form-level1-element,.form-level2-element, .form-level3-element{
+    border-radius: 12px;
+    border-width: 1px;
+    border-color:#ec495a ;
+    border-style: solid;
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+    /* box-shadow: 1px 1px 5px 1px grey; */
+}
+.option{
+    text-align: inherit;
+}
+#form-product,#form-style,#form-brand,#form-size,#form-colour{
+    border: none;
+    margin: 2px;
+    width: 80%;
+}
 .form-level2,.form-level3{
     display: flex;
     justify-content: space-around;
@@ -52,51 +78,59 @@ form{
 #form-button-enviar{
     width:100%;
     height: 36px;
+    background-color:#ec495a;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color:#f7f7f7 ;
+    border-style: solid;
+    color:#ffffff;
+    font-size: 18px;
 }
+
 .kiting-style{  /*estas son las secciones que contienen cada tipo de kiting */
     /*height: 288px; ACA LE DOY UN TAMAÑO A LAS SECCIONES DE LA HOME*/
     flex-direction: column;
 }
-/* Grandes imagenes de la home */
+
 #figure-surf{
     height: 240px;
-    border-radius: 2%;
+    border-radius: 12px;
     background-image: url("../img/home-surf.jpg");
     background-position: center;
 }
 #figure-freestyle{
     height: 240px;
-    border-radius: 2%;
+    border-radius: 12px;
     background-image: url("../img/home-freestyle.jpg");
     background-position: center;
 }
 #figure-freeride{
     height: 240px;
-    border-radius: 2%;
+    border-radius: 12px;
     background-image: url("../img/home-freeride.jpg");
     background-position: center;
 }
 
 /* Botones de compra de la home */
 .button-comprar{
-    position: relative;
-    background-color:#ffffff;
-    padding: 10px;
-    left: 32px;
-    top: 32px;
+    width: 100%; 
+    margin-top: 12px;
+    background-color:#727272;
     height: 40px;
     border-radius: 12px;
     border-width: 1px;
-    border-color: #727272;
+    border-color:#f7f7f7 ;
     border-style: solid;
+    color:#ffffff;
+    font-size: 18px;
 }
-
 .a-comprar{
-    background-color: white;
-
+    background-color:inherit;
     text-decoration: none; /* le pido que no este subrayado */
     color: inherit; /* le pido que el color sea igual que todo el resto de la pagina */
     margin: auto;
+    font-weight: bold;
+    
 }
 
 article{
@@ -120,10 +154,10 @@ p{
         background-size: 1279px;  
     }
     .airbnb-box{
-        height: 368px; /*comportamiento airbnb */
+        height: 350px; /*comportamiento airbnb */
         width: 544px;
         margin: 20px;
-        border-radius: 2%;     
+        border-radius: 12px;     
         box-shadow: 0px 0px 40px rgb(133, 120, 120);    
         padding: 12px;
         }
@@ -134,20 +168,24 @@ p{
         flex-direction: row-reverse;
     }
     article{
-        margin-top: auto;
-        margin-bottom: auto;
+        margin-top: 4px;
         text-align: justify;
+        height: 240px;
     }
     p{
         margin-right:56px;
+        margin-top: 12px;
+        margin-bottom: 12px;
         text-align: justify;
+        font-style: italic;
     }
     #figure-surf,#figure-freeride{
         margin-left: 16px;
-        width: 180%;
+        width: 160%;
     }
     #figure-freestyle{
         margin-right: 16px;
-        width: 180%;
+        width: 130%;
     }
+
 }

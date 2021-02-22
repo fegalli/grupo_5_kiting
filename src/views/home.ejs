@@ -10,23 +10,23 @@
         <section class="presentation">
             <div class="airbnb-box">
                 <h1 id="title-airbnb-box">Encuentra tu próximo equio en Kiting</h1>
-                <p id="description-airbnb-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p> 
-                <br>
+                <p id="description-airbnb-box">Cada cometa es diferente, asegurarte de que eliges la cometa indicada para tu estilo preferido</p> 
                 <form  class="formulario" action="/" method="POST"> 
                     <div>
-                        <label for='product'>¿Qué estas buscando?</label><br>
-                        <div class='form-level1'> <!--este div me permite tener la primer pregunta en un solo renglon -->
-                            <input type="radio" name = "product" id="product"  value="equipo-completo">Equipo completo</option>
-                            <input type="radio" name = "product" id="product"  value="vela">Vela</option>
-                            <input type="radio" name = "product" id="product"  value="barra">Barra</option>
-                            <input type="radio" name = "product" id="product"  value="tabla">Tabla</option>
-                            <input type="radio" name = "product" id="product"  value="arnes">Arnes</option>
+                        <div class="form-level1-element">  <!-- este div me permite customizar el estilo de boton + etiqueta -->          
+                            <label for='product'>¿Qué estas buscando?</label><br>
+                            <div class='form-level1' id="form-product"> <!--este div me permite tener la primer pregunta en un solo renglon -->
+                                <input type="radio" name = "product" id="product"  value="equipo-completo">Equipo completo</option>
+                                <input type="radio" name = "product" id="product"  value="vela">Vela</option>
+                                <input type="radio" name = "product" id="product"  value="barra">Barra</option>
+                                <input type="radio" name = "product" id="product"  value="tabla">Tabla</option>
+                                <input type="radio" name = "product" id="product"  value="arnes">Arnes</option>
+                            </div>
                         </div>
-                        <br>
                         <div class="form-level2"> <!--este div me permite tener la pregunta 2 y 3 en el mismo renglon -->
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
                                 <label for="kie-style">¿Qué estilo estas buscando?</label><Br>
-                                    <select name="style">
+                                    <select name="style" id="form-style">
                                         <option id="style" value="freeride">Freeride</option>
                                         <option id="style" value="surf">Surf</option>
                                         <option id="style" value="freestyle">Freestyle</option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
                             <label for="brand">¿Qué tamaño estas buscando?</label><Br>
-                                <select name="brand">
+                                <select name="brand" id="form-brand">
                                     <option id="brand" value="all" selected>Todos</option>               
                                     <option id="brand" value="north">North</option>
                                     <option id="brand" value="duotone">Duotone</option>
@@ -47,14 +47,14 @@
                         <div class="form-level3">
                             <div class="form-level3-element">
                                 <label for="size">¿Qué tamaño estas buscando?</label><Br>
-                                    <select name="size">                       
+                                    <select name="size"id="form-size">                       
                                         <option id="size" value="all" selected>Todos</option>
                                         <option id="size" value="completar">necesita js/db</option>
                                     </select>
                             </div>
                             <div class="form-level3-element">
                                 <label for="colour">¿Qué color estas buscando?</label><Br>
-                                <select name="colour">
+                                <select name="colour" id="form-colour">
                                     <option id="colour" value="all" selected>Todos</option>
                                     <option id="colour" value="completar">necesita js/db</option>
                                 </select>
@@ -67,32 +67,35 @@
         </section>
         <!-- ACA TERMINA EL ESTILO AIRBN -->
         <br>
-        <section class="kiting-style">
+        <section class="kiting-style" id="kiting-style-surf">
             <article id="article-surf">
-                <h2 id="title-surf">El surf es todo lo que esta bien</h2>
-                <p id="description-surf">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>    
+                <h2 id="title-surf">SURF COLLECTION</h2>
+                <p id="description-surf">Our 2021 Surf Collection is designed to give you all the feels and don’t ride the water, be the water</p>
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>   
             </article>
-            <figure class="kiting-style-figures" id="figure-surf"><button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button></figure>
+            <figure class="kiting-style-figures" id="figure-surf"></figure>
         </section>
-        <br>
-        <hr style="width:90%;margin:auto">
+        <br >
+        <hr style="width:90%;margin:auto;">
         <br>
         <section class="kiting-style" id="kiting-style-freestyle">
             <article id="article-freestyle">
-                <h2 id="title-freestyle">El freestyle es todo lo que esta bien</h2>
-                <p id="description-freestyle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>    
+                <h2 id="title-freestyle">FREESTYLE COLLECTION</h2>
+                <p id="description-freestyle">Dance it out, let yourself go. Parkour, ocean style. This is your playground</p>  
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>  
             </article>
-            <figure class="kiting-style-figures" id="figure-freestyle"><button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button></figure>
+            <figure class="kiting-style-figures" id="figure-freestyle"></figure>
         </section>
         <br>
         <hr style="width:90%;margin:auto">
         <br>
         <section class="kiting-style">
             <article id="article-freeride">
-                <h2 id="title-freeride">El freeride es todo lo que esta bien</h2>
-                <p id="description-freeride">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2 id="title-freeride">FREERIDE COLLECTION</h2>
+                <p id="description-freeride">Sensing your kite’s position is second nature with the Navigator – designed for the ultimate intuitive feeling so that you can think less and feel more</p>
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>
             </article>
-            <figure class="kiting-style-figures" id="figure-freeride"><button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button></figure>
+            <figure class="kiting-style-figures" id="figure-freeride"></figure>  
         </section>
         <br>
     </main>
