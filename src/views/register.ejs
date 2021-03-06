@@ -4,28 +4,30 @@
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="../../css/register.css">
 </head>
-    <!--HEADER--> <%- include('./partials/header') %> 
+    
 <body>
-    <main>
+    <!--HEADER--> <%- include('./partials/header') %> 
+    <main class = "login"> 
+        <video class="loginVideo" src="/video/Surfing through the Ocean Waves.mp4" muted autoplay loop></video>
         <nav class = "loginForm">
             <div class = "userIcon"> <i  class="fas fa-user"></i></div>
             <div class = "border"></div>
-            <div class="ContentForm"></div>
-                <div class="crearCuenta">Create account</div>
+            <div class="ContentForm">
+                <div class="crearCuenta">Crear cuenta</div>
                 <form action="home.html" method="post" name="FormEntrar">   
                         
                         <input class ="emailForm" type="usuario" class="form-control" name="correo" placeholder="Email/Username" id="Correo"  required>
-                    <br>
+                </div>
+                        <br>
                     <input class= "contraseña"type="password" name="contra" class="form-control" placeholder="Password"  required>
-                
+            </div>
                     <input class ="confirmarcontraseña" type="password" name=contra placeholder = "Repeat password" required>
                     <br>
                 
                     <button class = "submitBottom" type="submit"><b>SIGN IN ></b></button>
                     <div  class= "registro"><a href="/login">Already have an account? LOG IN</a></div>
                     
-                </form>
-            </div>	
+                </form>	
             </div>
         </nav>
     </main>

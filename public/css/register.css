@@ -13,7 +13,7 @@
 main{
     height: 80vh;
 }
-img{
+img, video{
     width: auto;
     height: auto;
 }
@@ -47,6 +47,18 @@ img{
     font-size: 3vh;
 } */
 
+.loginVideo{
+    position: absolute;
+    /* z-index: 0; */
+    height: 100%;
+    width: 100%;
+}
+.login {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .loginForm{
     width: 16em;
 	margin: 50px auto;
