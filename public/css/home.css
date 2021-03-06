@@ -46,7 +46,7 @@ form{
 }
 .form-level1{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
 }
 .form-level1-element,.form-level2-element, .form-level3-element{

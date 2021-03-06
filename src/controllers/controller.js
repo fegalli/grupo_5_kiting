@@ -6,10 +6,14 @@ module.exports = {
         // return res.sendFile(path.resolve(__dirname,"../views/home.ejs")) Lo dejo como ejemplo de como se resuelve las vistas si no usamos el motor de plantilla .ejs (cuando usabamos directamente el html)
     },
     login : (req,res)=>{
-        return res.render('login')
+        return res.render('login',{
+            css : "login.css"
+        })
     },
     register : (req, res)=>{
-        return res.render('register')
+        return res.render('register', {
+            css: "register.css"
+        })
     },
     productCart : (req, res)=>{
         return res.render('productCart')

@@ -1,66 +1,45 @@
-/* *{
-    width:100%;
-    
-} */
+
 *{
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     margin: 0 ; 
-    background-color:  #EFEBEE  ;
-
+    background-color:  #ffffff ;
 }
 main{
     height: 80vh;
 }
-img{
+img,video{
     width: 100%;
 }
-
-/* header{
+.login {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: solid 2px#51515F;
-    vertical-align: middle;
-    height: 3em;
-    width: 1;
-    margin:1px;
-    font-family: "Ubuntu";
-    float:none;   
-    }
-
-.logoHeader{
-    text-align:left;
-    font-size: 3vh;
-    
+    justify-content: center;
+    align-items: center;
 }
-
-.homeHeader{
-    text-align: right;
-    font-size: 3vh;
-    
-
+.loginVideo{
+    position: absolute;
+    /* z-index: 0; */
+    height: 100%;
 }
-
-.contactUsHeader {
-    text-align: right;
-    font-size: 3vh;
-    
-} */
-
 .ContentForm{
     background-color:white;
+
 }
-.loginForm{
+.loginForm {
     width: 16em;
-	margin: 50px auto;
-	background-color:white;
+    /* margin: 50px auto; */
+    background-color: white;
     border: 1px solid #51515F;
-	height: auto;
-	border-radius:2%;
-    box-shadow:0px 0px 20px rgb(141, 140, 140);}
+    height: auto;
+    border-radius: 2%;
+    box-shadow: 0px 0px 20px rgb(141 140 140);
+    /* z-index: 100; */
+    position: absolute;
+}
+
 
 .userIcon{
     color:black;   
