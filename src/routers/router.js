@@ -13,7 +13,6 @@ router.get("/modificacionProducto", controller.modificacionProducto) // Corregir
 // Listado de productos
 router.get('/products', controller.products)
 // Formulario de crreaction de productos
-// router.get("/creacionProductos", controller.creacionProductos) // Corregir a ingles
 router.get("/products/create", controller.productsCreate)
 
 
