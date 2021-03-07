@@ -12,10 +12,16 @@ router.get("/modificacionProducto", controller.modificacionProducto) // Corregir
 
 // Listado de productos
 router.get('/products', controller.products)
-// Formulario de crreaction de productos
+// Formulario de creaction de productos
 router.get("/products/create", controller.productsCreate)
+// Accion de creacion de un producto
+router.post('/products', controller.products)
+
+
 // Detalle de un producto en particular
-// router.get('/products/:id',controler.products)
+// router.get('/products/:id',controler.products
+
+
 
 module.exports = router;
  
