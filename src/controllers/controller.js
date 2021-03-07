@@ -27,15 +27,17 @@ module.exports = {
             css: "productDetail.css"
         })
     },
-    creacionProductos : (req, res) =>{
-        return res.render ("creacionProductos",{
-        css: "creacionProductos.css"})
+    productsCreate : (req, res) =>{
+        return res.render ("productsCreate",{
+        css: "productsCreate.css"})
     },
     modificacionProducto : (req, res) => {
         return res.render ("modificacionProducto",{
             css:"modificacionProductos.css"
         })
+    },
+    products : (req,res) => {
+        return res.sendFile(path.resolve(__dirname,"../data/products.json"))
     }
-    
 }
  
