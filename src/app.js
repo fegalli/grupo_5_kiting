@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname, '../public')));
     // a partir de esa carpeta.
 
 // Llamado de rutas
-const router = require('../src/routers/router');
+const router = require('./routers/web');
 app.use('/', router);
 app.listen(process.env.PORT || '3000', () => console.log('Servidor corriendo en el puerto 3000'))
 

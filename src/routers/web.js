@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const controller = require('../controllers/controller')
+const controller = require('../controllers/controllerWeb')
 
 router.get('/', controller.index)
 router.get('/login', controller.login)
@@ -14,7 +14,8 @@ router.get("/modificacionProducto", controller.modificacionProducto) // Corregir
 router.get('/products', controller.products)
 // Formulario de crreaction de productos
 router.get("/products/create", controller.productsCreate)
-
+// Detalle de un producto en particular
+// router.get('/products/:id',controler.products)
 
 module.exports = router;
  
