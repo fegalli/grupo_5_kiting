@@ -57,9 +57,9 @@ module.exports = {
         let nuevoProductoJson = JSON.stringify(productos)
         fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
     },
-    modificacionProducto : (req, res) => {
-        return res.render ("modificacionProducto",{
-            css:"modificacionProductos.css"
+    productEdit : (req, res) => {
+        return res.render ("productEdit",{
+            css:"productEdit.css"
         })
     }
 }
