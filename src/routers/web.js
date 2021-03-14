@@ -13,7 +13,7 @@ router.get('/productEdit', controller.productEdit)
 // Listado de productos
 router.get('/products', controller.products)
 // Formulario de creaction de productos
-router.get("/products/create", controller.productsCreate)
+router.get('/products/create', controller.productsCreate)
 // Accion de creacion de un producto
 router.post('/products/create', controller.productsSave)
 

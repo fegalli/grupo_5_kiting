@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
 </head>
 <body>
     <main>
-     <!--HEADER--> <%- include('./partials/header') %> 
+     <!--HEADER--> <%- include('../partials/header') %> 
     <main>
     <form  class="formulario" method="POST" action="/products/create" enctype="multipart/form-data"> 
             <div class = "titulo">¿Qué nuevo producto queres cargar?</div>
@@ -37,6 +37,6 @@
             <button type="submit" id='form-button-enviar'>Publicar</button>
     </form>
     </main>
-    <!-- FOOTER --> <%- include('./partials/footer') %> 
+    <!-- FOOTER --> <%- include('../partials/footer') %> 
 </body>
 </html>

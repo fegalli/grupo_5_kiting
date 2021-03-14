@@ -4,30 +4,30 @@ const { json } = require('express');
 
 module.exports = {
     index : (req, res)=>{
-        return res.render('home',{
-                                css: "home.css" }
+        return res.render('./web/home',{
+                                css: "web/home.css" }
                         )
              //Lo dejo como ejemplo de como se resuelve las vistas si no usamos el motor de plantilla .ejs (cuando usabamos directamente el html)      
              // return res.sendFile(path.resolve(__dirname,"../views/home.ejs")) 
     },
     login : (req,res)=>{
-        return res.render('login',{
-            css : "login.css"
+        return res.render('./users/login',{
+            css : "users/login.css"
         })
     },
     register : (req, res)=>{
-        return res.render('register', {
-            css: "register.css"
+        return res.render('./users/register', {
+            css: "users/register.css"
         })
     },
     productCart : (req, res)=>{
-        return res.render('productCart', {
-            css: "productCart.css"
+        return res.render('./products/productCart', {
+            css: "products/productCart.css"
         })
     },
     productDetail : (req, res)=>{
-        return res.render('productDetail',{
-            css: "productDetail.css"
+        return res.render('.products/productDetail',{
+            css: "/products/productDetail.css"
         })
     },
     //Se muestran los productos 
@@ -37,8 +37,8 @@ module.exports = {
     },
     //Se muestra el formualrio de creacion
     productsCreate : (req, res) =>{
-        return res.render ("productsCreate",{
-        css: "productsCreate.css"})
+        return res.render ("./admin/productsCreate",{
+        css: "/admin/productsCreate.css"})
     },
 
     // Accion de crear un producto
@@ -62,8 +62,8 @@ module.exports = {
         res.redirect('/products')
     },
     productEdit : (req, res) => {
-        return res.render ("productEdit",{
-            css:"productEdit.css"
+        return res.render ("./admin/productEdit",{
+            css:"/admin/productEdit.css"
         })
     }
 }
