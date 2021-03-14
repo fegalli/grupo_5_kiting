@@ -22,5 +22,5 @@ app.set('views', './src/views'); // con esta linea le digo a express en que carp
     //PRO-TIP el metodo .set() permite definir configuraciones de express
 
 // Configuracion necesaria para capturar informacion de los formularios
-app.use(express.urlencoded({extended : false}))
+app.use(express.urlencoded({extended : false }))
 app.use(express.json())

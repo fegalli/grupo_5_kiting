@@ -47,11 +47,11 @@ module.exports = {
             id : ultimoProducto.id + 1,
             product : req.body.product ,
             comentarios : req.body.comentarios,
-            imagen : req.body.imagen ,
+            // imagen : req.body.imagen ,
             brand : req.body.brand ,
             price : req.body.price ,
         }
-        let nuevoProductoJson = JSON.stringify(productos,null,2)
+        let nuevoProductoJson = JSON.stringify(productos)
         fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
     },
     modificacionProducto : (req, res) => {
