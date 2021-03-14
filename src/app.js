@@ -24,8 +24,18 @@ app.set('view engine', 'ejs');  // Aca le estoy diciendo a express que voy a uti
 app.set('views', './src/views'); // con esta linea le digo a express en que carpeta estan mis vistas. Si no la utizo, por default express ira a buscar una carpeta que se llame -views-
 //PRO-TIP el metodo .set() permite definir configuraciones de express
 
-// Llamado de rutas
-const router = require('./routers/web');
-app.use('/', router);
+// Llamado de rutas (o 'requerir rutas')
+const routerWeb   = require('./routers/web');
+const routerUsers = require('./routers/users');
+const routerProducts = require('./routers/products')
+const routerAdmin = require('./routers/admin')
+
+// Para usar rutas
+app.use(routerWeb);
+app.use(routerUsers)
+app.use(routerProducts)
+app.use(routerAdmin)
+
+//Levantar el servidor
 app.listen(process.env.PORT || '3000', () => console.log('Servidor corriendo en el puerto 3000'))
 
