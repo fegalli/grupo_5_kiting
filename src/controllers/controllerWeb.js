@@ -5,7 +5,8 @@ const { json } = require('express');
 module.exports = {
     index : (req, res)=>{
         return res.render('home',{
-             css: "home.css" })
+                                css: "home.css" }
+                        )
              //Lo dejo como ejemplo de como se resuelve las vistas si no usamos el motor de plantilla .ejs (cuando usabamos directamente el html)      
              // return res.sendFile(path.resolve(__dirname,"../views/home.ejs")) 
     },
@@ -29,7 +30,8 @@ module.exports = {
             css: "productDetail.css"
         })
     },
-    //Se muestran los productos
+    //Se muestran los productos 
+    // (POR EL MOMENTO, LANZO EL JSON, NO TIENE PANTALLA)
     products : (req,res) => {
         return res.sendFile(path.resolve(__dirname,"../data/products.json"))
     },
@@ -38,6 +40,7 @@ module.exports = {
         return res.render ("productsCreate",{
         css: "productsCreate.css"})
     },
+
     // Accion de crear un producto
     productsSave : (req,res) => {
         let productos = JSON.parse(fs.readFileSync(path.resolve('__dirname', '../data/products.json')))
