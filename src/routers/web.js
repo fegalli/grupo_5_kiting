@@ -8,14 +8,14 @@ router.get('/login', controller.login)
 router.get('/register', controller.register)
 router.get('/productCart', controller.productCart)
 router.get('/productDetail', controller.productDetail)
-router.get("/productEdit", controller.productEdit) // Corregir a ingles
+router.get('/productEdit', controller.productEdit)
 
 // Listado de productos
 router.get('/products', controller.products)
 // Formulario de creaction de productos
 router.get("/products/create", controller.productsCreate)
 // Accion de creacion de un producto
-router.post('/products', controller.productsSave)
+router.post('/products/create', controller.productsSave)
 
 
 // Detalle de un producto en particular

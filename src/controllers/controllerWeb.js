@@ -43,19 +43,23 @@ module.exports = {
 
     // Accion de crear un producto
     productsSave : (req,res) => {
-        let productos = JSON.parse(fs.readFileSync(path.resolve('__dirname', '../data/products.json')))
+        console.log(req.body)
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
         let ultimoProducto = productos.pop()
         productos.push(ultimoProducto)
+        console.log(req.body)
         let nuevoProducto = {
             id : ultimoProducto.id + 1,
             product : req.body.product ,
             comentarios : req.body.comentarios,
             // imagen : req.body.imagen ,
             brand : req.body.brand ,
-            price : req.body.price ,
+            price : req.body.price 
         }
+        productos.push(nuevoProducto)
         let nuevoProductoJson = JSON.stringify(productos)
         fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
+        res.redirect('/products')
     },
     productEdit : (req, res) => {
         return res.render ("productEdit",{
