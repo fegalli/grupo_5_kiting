@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-const { json } = require('express');
 
 module.exports = {
     login : (req,res)=>{

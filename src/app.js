@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const methodOverride = require('method-override') // Parte de la confing que nos deja usar put y delete
+
 // Seteo de elementos estaticos 
 app.use(express.static(path.resolve(__dirname, '../public')));
     // Los recursos estaticos son aquellos que no pasan por el proceso de renderizado y que son cargados directamente
@@ -11,13 +13,9 @@ app.use(express.static(path.resolve(__dirname, '../public')));
     // a partir de esa carpeta.
 
 // Configuracion necesaria para capturar informacion de los formularios //
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
-//app.use(express.json())
-//app.use(methodOverride('_method'));//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
-
+app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.json())
+app.use(methodOverride('_method'));//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 
 // Configurando EJS
 app.set('view engine', 'ejs');  // Aca le estoy diciendo a express que voy a utilizar un motor de plantillas y que ese motor es ejs

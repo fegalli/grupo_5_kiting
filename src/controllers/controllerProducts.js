@@ -9,8 +9,15 @@ module.exports = {
         })
     },
     productDetail : (req, res)=>{
-        return res.render('.products/productDetail',{
-            css: "/products/productDetail.css"
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+        let miProducto = productos.find(producto => {
+                if(producto.id == req.params.id ){
+                    return producto
+                }         
+        });
+        return res.render('./products/productDetail',{
+            css: "products/productDetail.css",
+            ...miProducto
         })
     }
 }
@@ -27,12 +34,5 @@ module.exports = {
 // let kites =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','products.json')));
 
 // module.exports = {
-//     destroy : (req, res) => {
-       
-//         let kites = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
-//         const kiteDeleteId = req.params.id;
-//         const kiteFinal = kites.filter(kites => kites.id != kiteDeleteId);
-//         let kitesGuardar = JSON.stringify(kiteFinal,null,2)
-//         fs.writeFileSync(path.resolve(__dirname, '../database/products.json'),kitesGuardar);
-//         return res.send("El producto ha sido borrado exitosamente");
+
 // }}
