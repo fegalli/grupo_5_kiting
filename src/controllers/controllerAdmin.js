@@ -3,8 +3,17 @@ const fs = require('fs');
 
 module.exports = {
     // (en el paralelo con dani se deberia llamar productsINDEX)
-    products : (req,res) => {
-        return res.sendFile(path.resolve(__dirname,"../data/products.json"))
+    index : (req,res) => {
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+        //return res.sendFile(path.resolve(__dirname,"../data/products.json"))
+        return res.render('./admin/products'
+            ,{ css: '/admin/products.css',
+            productos
+        })
+    // index: (req,res) =>{
+    //     let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));
+    //     res.render(path.resolve(__dirname, '../views/admin/administrar'), {motos});
+    // },
     },
     //Se muestra el formualrio de creacion
     productsCreate : (req, res) =>{

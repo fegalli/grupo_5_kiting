@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <!--HEADER--> <%- include('../partials/header') %> 
+    <main>
+    <section class="productos">
+        <% for(let i= 0; i < productos.length; i++){ %> 
+            <article class="articulo">
+                <figure class="imagenProducto" >
+                    <img  src='/img/carve-main.png'>
+                </figure>
+                <section class="detalle">
+                    <h5 class="card-title"><%= productos[i].product%></h5>
+                    <h5 class="card-title" >$  <%= productos[i].price%> </h5>
+                    <p class="card-text descripcion"><%= productos[i].comentarios%> </p>
+                </section>
+                <section class="botones">
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </section>
+            </article>
+        <% } %>
+    </section>
+    </main>
+   <!-- FOOTER --> <%- include('../partials/footer') %> 
+</body>
+</html>

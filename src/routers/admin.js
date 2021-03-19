@@ -20,11 +20,20 @@ const storage = multer.diskStorage({
 })
 const uploadFile = multer({storage})
 
-router.get('/products', controllerAdmin.products) // Listado de productos
-router.get('/products/create', controllerAdmin.productsCreate) // Formulario de creaction de productos
-router.post('/products/create',uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
-router.get('/products/edit/:id', controllerAdmin.productEdit) // Formulario de edicion de un producto
+router.get('/admin/products', controllerAdmin.index) // Listado de productos
+router.get('/admin/products/:id', controllerAdmin.productsShow)   // Se muestra un producto en particular
+router.get('/admin/create', controllerAdmin.productsCreate) // Formulario de creaction de productos
+router.post('/admin/create',uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/edit/:id', controllerAdmin.productEdit) // Formulario de edicion de un producto
 //router.put('/products/edit/:id', controllerAdmin.productUpdate) // Accion de edicion de un producto
-router.get('/products/:id', controllerAdmin.productsShow)   // Se muestra un producto en particular
-router.get('/products/delete/:id', controllerAdmin.destroy) // Accion de eliminar un producto
+router.get('/admin/delete/:id', controllerAdmin.destroy) // Accion de eliminar un producto
+
 module.exports  = router 
+
+// router.get('/administrar', acceso, controllersAdmin.index);
+// router.get('/administrar/create', controllersAdmin.create);
+// router.post('/administrar/create', upload.single('imagen'), controllersAdmin.save);
+// router.get('/administrar/detail/:id', controllersAdmin.show);
+// router.get('/administrar/edit/:id', controllersAdmin.edit);
+// router.put('/administrar/edit/:id', upload.single('imagen'), controllersAdmin.update);
+// router.get('/administrar/delete/:id', controllersAdmin.destroy);
