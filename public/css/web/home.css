@@ -95,19 +95,19 @@ form{
 #figure-surf{
     height: 240px;
     border-radius: 12px;
-    background-image: url("../img/home-surf.jpg");
+    background-image: url("../../img/home-surf.jpg");
     background-position: center;
 }
 #figure-freestyle{
     height: 240px;
     border-radius: 12px;
-    background-image: url("../img/home-freestyle.jpg");
+    background-image: url("../../img/home-freestyle.jpg");
     background-position: center;
 }
 #figure-freeride{
     height: 240px;
     border-radius: 12px;
-    background-image: url("../img/home-freeride.jpg");
+    background-image: url("../../img/home-freeride.jpg");
     background-position: center;
 }
 
@@ -148,7 +148,7 @@ p{
    /*desktop*/
    @media (min-width:769px){
     .presentation{
-        background-image:url("../img/raphael-nogueira-Cl-TBR7N0oQ-unsplash.jpg");
+        background-image:url("../../img/raphael-nogueira-Cl-TBR7N0oQ-unsplash.jpg");
         background-position:top;
         height: 510px;
         background-size: 1279px;  

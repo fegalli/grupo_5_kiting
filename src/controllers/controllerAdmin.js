@@ -10,10 +10,6 @@ module.exports = {
             ,{ css: '/admin/products.css',
             productos
         })
-    // index: (req,res) =>{
-    //     let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));
-    //     res.render(path.resolve(__dirname, '../views/admin/administrar'), {motos});
-    // },
     },
     //Se muestra el formualrio de creacion
     productsCreate : (req, res) =>{
