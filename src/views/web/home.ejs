@@ -13,24 +13,21 @@
                 <form  class="formulario" action="/" method="POST"> 
                     <div>
                         <div class="form-level1-element">  <!-- este div me permite customizar el estilo de boton + etiqueta -->          
-                            <label for='product'>¿Qué estas buscando?</label><br>
+                            <label for='style'>¿Qué estilo estas buscando?</label><br>
                             <div class='form-level1' id="form-product"> <!--este div me permite tener la primer pregunta en un solo renglon -->
-                                <input type="radio" name = "product" id="product"  value="equipo-completo">Equipo completo</option>
-                                <input type="radio" name = "product" id="product"  value="vela">Vela</option>
-                                <input type="radio" name = "product" id="product"  value="barra">Barra</option>
-                                <input type="radio" name = "product" id="product"  value="tabla">Tabla</option>
-                                <input type="radio" name = "product" id="product"  value="arnes">Arnes</option>
+                                <input type="radio" name = "style" id = "style"  value="all">Todos</option>
+                                <input type="radio" name = "style" id = "style"  value="surf">Surf</option>
+                                <input type="radio" name = "style" id = "style"  value="freeride">Freeride</option>
+                                <input type="radio" name = "style" id = "style"  value="freestyle">Freestyle</option>
                             </div>
                         </div>
                         <div class="form-level2"> <!--este div me permite tener la pregunta 2 y 3 en el mismo renglon -->
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
-                                <label for="kie-style">¿Qué estilo estas buscando?</label><Br>
+                                <label for="name">¿Qué marca estas buscando?</label><Br>
                                     <select name="style" id="form-style">
-                                        <option id="style" value="freeride">Freeride</option>
-                                        <option id="style" value="surf">Surf</option>
-                                        <option id="style" value="freestyle">Freestyle</option>
-                                        <option id="style" value="foil">Foil</option>
-                                        <option id="style" value="all" selected>Todos</option>
+                                        <option id="name" value="all">Todos</option>
+                                        <option id="name" value  ="completar">necesita js/db</option>
+
                                     </select>
                             </div>
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->

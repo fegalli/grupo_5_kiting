@@ -23,8 +23,8 @@ module.exports = {
         productos.push(ultimoProducto)
         let nuevoProducto = {
             id : ultimoProducto.id + 1,
-            product : req.body.product ,
-            comentarios : req.body.comentarios,
+            name : req.body.name ,
+            comments : req.body.comentarios,
             imagen : req.file.filename,
             brand : req.body.brand ,
             price : req.body.price 
@@ -32,7 +32,7 @@ module.exports = {
         productos.push(nuevoProducto)
         let nuevoProductoJson = JSON.stringify(productos, null, 2)
         fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
-        res.redirect('/products')
+        res.redirect('/admin/products')
     },
     // Se muestra el formulario de edicion de un producto
     productEdit : (req, res) => {
@@ -44,19 +44,31 @@ module.exports = {
         });
         return res.render ("./admin/productEdit",{
             css:"/admin/productEdit.css",
-            ...miProducto
+            miProducto
         })
     },
-    // // accion de editar un producto //
-    // productUpdate : (req,res)=>{
-    //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
-    //     let miProducto = productos.find(producto => {
-    //         if(producto.id == req.params.id ){
-    //             return producto
-    //         } 
-    // });}
-    // let productosActualizados = productos.map
-
+    // accion de editar un producto //
+    productUpdate : (req,res)=>{
+        // 1 - me traigo todos los productos
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))   
+        // 2 - identifico mi producto
+        let miProducto = productos.find(producto => {
+            if(producto.id == req.params.id ){
+                return producto
+            }})
+        // 3 - identifico mi producto en la lista de productos y escribo sus nusvos valores
+        req.body.id = req.params.id;
+        let productosUpdate = productos.map(producto =>{
+            if(producto.id == miProducto.id){
+                return req.body
+            }
+            return producto
+        })
+        // 4 - subo el nuevo json de productos
+        let productosUpdateJSON = JSON.stringify(productosUpdate, null, 2)
+        fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),productosUpdateJSON)
+        return res.redirect('/admin/products')
+    },
     // Se el detalle de un producto en particular
     productsShow : (req, res) => {
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
@@ -74,7 +86,7 @@ module.exports = {
         const productosFinal = productos.filter(productos => productos.id != productoDeleteId);
         let productosFinalJSON = JSON.stringify(productosFinal, null, 2)
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'),productosFinalJSON);
-        return res.redirect('/products') //res.send("El producto ha sido borrado exitosamente");
+        return res.redirect('/admin/products') //res.send("El producto ha sido borrado exitosamente");
     }
 }
 

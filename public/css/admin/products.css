@@ -22,7 +22,6 @@ figure{
 article{
     display: flex;
     justify-content: flex-start;
-
     border-width: 1px;
     border-color: black; 
     border-style: solid;
@@ -41,6 +40,4 @@ article{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
-
 }

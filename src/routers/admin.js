@@ -25,7 +25,7 @@ router.get('/admin/products/:id', controllerAdmin.productsShow)   // Se muestra 
 router.get('/admin/create', controllerAdmin.productsCreate) // Formulario de creaction de productos
 router.post('/admin/create',uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
 router.get('/admin/edit/:id', controllerAdmin.productEdit) // Formulario de edicion de un producto
-//router.put('/products/edit/:id', controllerAdmin.productUpdate) // Accion de edicion de un producto
+router.put('/admin/edit/:id',uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
 router.get('/admin/delete/:id', controllerAdmin.destroy) // Accion de eliminar un producto
 
 module.exports  = router 

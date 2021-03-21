@@ -1,31 +1,10 @@
 [
   {
-    "id": 1,
-    "product": "Avalanche 2500",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Chevrolet",
-    "price": 297
-  },
-  {
-    "id": 2,
-    "product": "C70",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Volvo",
-    "price": 469
-  },
-  {
-    "id": 3,
-    "product": "Navigator",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Lincoln",
-    "price": 690
-  },
-  {
-    "id": 4,
-    "product": "W126",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Mercedes-Benz",
-    "price": 209
+    "product": "all",
+    "comentarios": "Si estas leyendo esto entonces, anda el metodo Update ! :) ",
+    "brand": "all",
+    "price": "",
+    "id": "4"
   },
   {
     "id": 5,
@@ -210,13 +189,6 @@
     "price": 504
   },
   {
-    "id": 31,
-    "product": "test",
-    "comentarios": "test",
-    "brand": "test",
-    "price": "test"
-  },
-  {
     "id": 32
   },
   {
@@ -229,35 +201,17 @@
     "id": 35
   },
   {
-    "id": 36
+    "id": 36,
+    "product": "all",
+    "comentarios": "hola",
+    "brand": "all",
+    "price": ""
   },
   {
-    "id": 37
-  },
-  {
-    "id": 38
-  },
-  {
-    "id": 39
-  },
-  {
-    "id": 40
-  },
-  {
-    "id": 41
-  },
-  {
-    "id": 42
-  },
-  {
-    "id": 43
-  },
-  {
-    "id": 44,
-    "product": "vela",
-    "comentarios": "4444",
-    "imagen": "1616016328756_img_.jpg",
-    "brand": "duotone",
-    "price": "44444"
+    "id": 37,
+    "comments": "aaaa",
+    "imagen": "1616292170841_img_.jpg",
+    "brand": "all",
+    "price": "11111"
   }
 ]
