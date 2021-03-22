@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
+const { validationResult } = require('express-validator')
 
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
         if (errors.isEmpty()) {
           let user = {
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
+            //password: bcrypt.hashSync(req.body.password, 10),
             role: 1
           }
           let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
