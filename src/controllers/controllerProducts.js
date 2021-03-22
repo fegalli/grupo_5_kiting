@@ -19,6 +19,14 @@ module.exports = {
             css: "products/productDetail.css",
             ...miProducto
         })
+    }, 
+    allProducts: (req,res) => {
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+        //return res.sendFile(path.resolve(__dirname,"../data/products.json"))
+        return res.render('./products/allProducts'
+            ,{ css: '/products/allProducts.css',
+            productos
+        })
     }
 }
 

@@ -8,11 +8,7 @@
         <!--HEADER--> <%- include('../partials/header') %> 
         <form  class="formulario" method="POST" action='/admin/edit/<%= miProducto.id%>?_method=PUT' enctype="multipart/form-data"> 
                <div class = "titulo">Modificacion de Productos ya cargados</div>
-                <label for="product">Elegi el producto a modificar</label><Br>
-                    <select name="product">
-                        <option id="product" value="all" selected>Todos</option>               
-                        <option id="product" value="necesitoJs">Necesito JS</option>
-                    </select>  </div>
+                  
                <div class="descripcion">
                    <label for="descripcion"> Descripción del producto</label>
                    <nav><textarea name="comentarios" rows="10" cols="40" placeholder="Escribe aqui la descripcion del producto"></textarea></nav>

@@ -1,0 +1,30 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    margin: 0 ; 
+    background-color:   #ffffff  ;
+}
+main{
+    max-width: 1279px;
+    margin: auto;
+    width: 90vw; 
+}
+img{
+    width: 100%;  
+}
+
+.productos{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.producto{
+    width: 50%;
+}
+.producto:hover{
+    opacity: 0.8;
+}  

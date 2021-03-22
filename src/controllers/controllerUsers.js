@@ -15,5 +15,31 @@ module.exports = {
             css: "users/register.css"
         })
     },
-
-}
+    create: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          let user = {
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            role: 1
+          }
+          let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
+            encoding: 'utf-8'
+          });
+          let users;
+          if (archivoUsers == "") {
+            users = [];
+          } else {
+            users = JSON.parse(archivoUsers);
+          };
+    
+          users.push(user);
+          usersJSON = JSON.stringify(users, null, 2);
+          fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
+          res.redirect('/login');
+        } else {
+            return res.render(path.resolve(__dirname, '../views/usuarios/registro'), {
+            errors: errors.errors,  old: req.body
+          });
+        }
+    }}

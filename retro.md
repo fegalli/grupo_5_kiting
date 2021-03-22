@@ -34,3 +34,20 @@ Hangouts calls nos funciona
 
 #### Dejar de hacer
 
+### Sprint 3
+Quienes? Mica y Fede
+Donde? Via call hangouts
+Cuando? Dia posterior a entrega 2
+
+#### Comenzar a hacer 
+Hacer las mejoras con mayor periocidad para no llegar corriendo. 
+
+#### Hacer más
+Las reuniones donde programamos en conjunto! Avanzamos mas rapido. 
+
+#### Continuar haciendo
+Seguir con las reuniones de programacion en conjunto
+
+#### Hacer menos
+
+#### Dejar de hacer

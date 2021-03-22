@@ -1,24 +1,9 @@
 [
   {
-    "product": "all",
-    "comentarios": "Si estas leyendo esto entonces, anda el metodo Update ! :) ",
-    "brand": "all",
-    "price": "",
-    "id": "4"
-  },
-  {
-    "id": 5,
-    "product": "3 Series",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "BMW",
-    "price": 1239
-  },
-  {
-    "id": 6,
-    "product": "Mountaineer",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Mercury",
-    "price": 743
+    "comentarios": "buenisimo producto",
+    "brand": "north",
+    "price": "123",
+    "id": "6"
   },
   {
     "id": 7,
@@ -189,29 +174,10 @@
     "price": 504
   },
   {
-    "id": 32
-  },
-  {
-    "id": 33
-  },
-  {
-    "id": 34
-  },
-  {
-    "id": 35
-  },
-  {
-    "id": 36,
-    "product": "all",
-    "comentarios": "hola",
-    "brand": "all",
-    "price": ""
-  },
-  {
-    "id": 37,
-    "comments": "aaaa",
-    "imagen": "1616292170841_img_.jpg",
-    "brand": "all",
-    "price": "11111"
+    "id": 31,
+    "comments": "el mejor kite que vas a ver en tu vida",
+    "imagen": "1616373934450_img_.jpg",
+    "brand": "cabrinha",
+    "price": "1987"
   }
 ]
