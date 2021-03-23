@@ -16,15 +16,16 @@
             
                     <article class="producto">
                       <figure class="imagenProducto" >
-                        <img  src="images/products/<%= productos[i].imagen%> " class="card-img-top w-100 d-block" >
-                      </figure>
-                    
+                        <img  src='/img/products/<%= productos[i].imagen%>'class="card-img-top w-100 d-block" >
+                      </figure>      
                       <section class="detalle">
-                        <h5 class="card-title"><%= productos[i].product%></h5>
-                        <h5 class="card-title"><%= productos[i].brand%></h5>
-                        <h5 class="card-title" >$  <%= productos[i].price%> </h5>
-                        <p class="card-text descripcion"><%= productos[i].comentarios%> </p>
-        
+                        <h4 class="card-title">Name: <%= productos[i].name%></h4>
+                        <h4 class="card-title" >Price($): <%= productos[i].price%> </h4>
+                        <h5 class="card-title" >Style: <%= productos[i].style%> </h5>
+                        <h5 class="card-title" >Brand: <%= productos[i].brand%> </h5>
+                        <h5 class="card-title" >Size: <%= productos[i].size%> </h5>      
+                        <h5 class="card-title" >Colour: <%= productos[i].colour%> </h5>  
+                        <p class="card-text descripcion">Comments: <%= productos[i].comments%> </p>
                       </section>
                   
                     </article>        
@@ -34,3 +35,5 @@
     <!-- FOOTER --> <%- include('../partials/footer') %> 
  </body>
  </html>
+
+ 

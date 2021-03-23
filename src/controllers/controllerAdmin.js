@@ -24,10 +24,13 @@ module.exports = {
         let nuevoProducto = {
             id : ultimoProducto.id + 1,
             name : req.body.name ,
-            comments : req.body.comentarios,
+            comments : req.body.comments,
             imagen : req.file.filename,
             brand : req.body.brand ,
-            price : req.body.price 
+            price : req.body.price,
+            colour : req.body.colour,
+            size : req.body.size,
+            style: req.body.style
         }
         productos.push(nuevoProducto)
         let nuevoProductoJson = JSON.stringify(productos, null, 2)
