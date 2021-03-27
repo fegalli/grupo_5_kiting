@@ -21,7 +21,7 @@ module.exports = {
         if (errors.isEmpty()) {
           let user = {
             email: req.body.email,
-            //password: bcrypt.hashSync(req.body.password, 10),
+            //password: bcrypt.hashSync(req.body.password, 10), 
             role: 1
           }
           let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
