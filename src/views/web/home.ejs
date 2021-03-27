@@ -24,10 +24,8 @@
                         <div class="form-level2"> <!--este div me permite tener la pregunta 2 y 3 en el mismo renglon -->
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
                                 <label for="name">¿Qué marca estas buscando?</label><Br>
-                                    <select name="style" id="form-style">
+                                    <select name="name" id="form-style">
                                         <option id="name" value="all">Todos</option>
-                                        <option id="name" value  ="completar">necesita js/db</option>
-
                                     </select>
                             </div>
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
@@ -45,18 +43,16 @@
                                 <label for="size">¿Qué tamaño estas buscando?</label><Br>
                                     <select name="size"id="form-size">                       
                                         <option id="size" value="all" selected>Todos</option>
-                                        <option id="size" value="completar">necesita js/db</option>
                                     </select>
                             </div>
                             <div class="form-level3-element">
                                 <label for="colour">¿Qué color estas buscando?</label><Br>
                                 <select name="colour" id="form-colour">
                                     <option id="colour" value="all" selected>Todos</option>
-                                    <option id="colour" value="completar">necesita js/db</option>
                                 </select>
                             </div>
                         </div>
-                        <br><button type="submit" id='form-button-enviar'href="./products/allProducts">Buscar</button>
+                        <br><button type="submit" id='form-button-enviar'><a href="../products/allProducts.ejs"></a>Buscar</button>
                     </div>
                 </form>
             </div>

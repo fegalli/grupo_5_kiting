@@ -43,4 +43,24 @@ module.exports = {
             errors: errors.errors,  old: req.body
           });
         }
-    }}
+    },
+    ingresar: (req,res) =>{
+      const errors = validationResult(req);
+      if(errors.isEmpty()){
+        let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+        let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+        delete usuarioLogueado.password;
+        req.session.usuario = usuarioLogueado;  
+        if(req.body.recordarme){
+          res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
+        }
+        return res.redirect('/');   
+
+      }else{
+    
+        res.render(path.resolve(__dirname, '../views/usuarios/login'),{errors:errors.mapped(),old:req.body});        
+      }
+    }
+  
+  
+  }

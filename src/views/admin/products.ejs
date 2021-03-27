@@ -11,7 +11,7 @@
             <article class="articulo">
                 <section class="content">
                     <figure class="imagenProducto" >
-                        <img  src='/img/carve-main.png'>
+                        <img  src='/img/products/<%= productos[i].imagen%>'>
                     </figure>
                     <section class="detalle">
                         <h4 class="card-title">Name: <%= productos[i].name%></h4>
@@ -19,8 +19,8 @@
                         <h5 class="card-title" >Style: <%= productos[i].style%> </h5>
                         <h5 class="card-title" >Brand: <%= productos[i].brand%> </h5>
                         <h5 class="card-title" >Size: <%= productos[i].size%> </h5>      
-                        <h5 class="card-title" >Color: <%= productos[i].color%> </h5>  
-                        <p class="card-text descripcion">Comments: <%= productos[i].comentarios%> </p>
+                        <h5 class="card-title" >Colour: <%= productos[i].colour%> </h5>  
+                        <p class="card-text descripcion">Comments: <%= productos[i].comments%> </p>
                     </section>
                 </section>
                 <section class="botones">

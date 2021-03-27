@@ -6,178 +6,20 @@
     "id": "6"
   },
   {
-    "id": 7,
-    "product": "Sephia",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Kia",
-    "price": 1382
+    "comentarios": "Si estas leyendo esto, entonces el update funciona!! :) ",
+    "brand": "all",
+    "price": "11111111",
+    "id": "7"
   },
   {
-    "id": 8,
-    "product": "E-350 Super Duty Van",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Ford",
-    "price": 773
-  },
-  {
-    "id": 9,
-    "product": "2500",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Chevrolet",
-    "price": 432
-  },
-  {
-    "id": 10,
-    "product": "Tundra",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Toyota",
-    "price": 955
-  },
-  {
-    "id": 11,
-    "product": "Space",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Isuzu",
-    "price": 615
-  },
-  {
-    "id": 12,
-    "product": "900",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Saab",
-    "price": 641
-  },
-  {
-    "id": 13,
-    "product": "Yukon",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "GMC",
-    "price": 694
-  },
-  {
-    "id": 14,
-    "product": "Mustang",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Ford",
-    "price": 1078
-  },
-  {
-    "id": 15,
-    "product": "Frontier",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Nissan",
-    "price": 493
-  },
-  {
-    "id": 16,
-    "product": "Aspire",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Ford",
-    "price": 468
-  },
-  {
-    "id": 17,
-    "product": "L300",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Mitsubishi",
-    "price": 109
-  },
-  {
-    "id": 18,
-    "product": "Grand Vitara",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Suzuki",
-    "price": 1442
-  },
-  {
-    "id": 19,
-    "product": "Viper",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Dodge",
-    "price": 801
-  },
-  {
-    "id": 20,
-    "product": "Econoline E250",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Ford",
-    "price": 332
-  },
-  {
-    "id": 21,
-    "product": "SSR",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Chevrolet",
-    "price": 1308
-  },
-  {
-    "id": 22,
-    "product": "Viper",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Dodge",
-    "price": 427
-  },
-  {
-    "id": 23,
-    "product": "Bronco II",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Ford",
-    "price": 1330
-  },
-  {
-    "id": 24,
-    "product": "Forester",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Subaru",
-    "price": 1498
-  },
-  {
-    "id": 25,
-    "product": "Venza",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Toyota",
-    "price": 927
-  },
-  {
-    "id": 26,
-    "product": "Silverado 2500",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Chevrolet",
-    "price": 471
-  },
-  {
-    "id": 27,
-    "product": "Continental Mark VII",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Lincoln",
-    "price": 756
-  },
-  {
-    "id": 28,
-    "product": "Express",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Chevrolet",
-    "price": 616
-  },
-  {
-    "id": 29,
-    "product": "FJ Cruiser",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Toyota",
-    "price": 1138
-  },
-  {
-    "id": 30,
-    "product": "Prizm",
-    "comentarios": "error: undefined method `/' for nil:NilClass",
-    "brand": "Geo",
-    "price": 504
-  },
-  {
-    "id": 31,
-    "comments": "el mejor kite que vas a ver en tu vida",
-    "imagen": "1616373934450_img_.jpg",
-    "brand": "cabrinha",
-    "price": "1987"
+    "id": "71",
+    "name": "dice",
+    "comments": "Kite perfecto para surf",
+    "imagen": "1616464063692_img_.png",
+    "brand": "duotone",
+    "price": "130000",
+    "colour": "red",
+    "size": "all",
+    "style": "surf"
   }
 ]
