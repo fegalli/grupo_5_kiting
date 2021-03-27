@@ -51,3 +51,22 @@ Seguir con las reuniones de programacion en conjunto
 #### Hacer menos
 
 #### Dejar de hacer
+
+### Sprint 4
+Quienes? Mica y Fede
+Donde? Via call hangouts
+Cuando? Dia posterior a entrega 4
+
+#### Comenzar a hacer 
+Trabajar todos los días o dia por medio para no tener que correr el dia antes
+
+#### Hacer más
+Igual que en el sprint anterior, lo charlamos y no lo pudimos concretar. Programemos en conjunto para avanzar mejor y mas rapido
+
+#### Continuar haciendo
+Mejorando codigo de sprints anteriores para no acumular deuda tecnica
+
+#### Hacer menos
+
+#### Dejar de hacer
+
