@@ -18,10 +18,11 @@ module.exports = {
     },
     create: (req, res) => {
         let errors = validationResult(req);
+        //return res.send(req.body)
         if (errors.isEmpty()) {
           let user = {
             email: req.body.email,
-            //password: bcrypt.hashSync(req.body.password, 10), 
+            password: bcrypt.hashSync(req.body.password, 10), 
             role: 1
           }
           let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
@@ -58,7 +59,7 @@ module.exports = {
 
       }else{
     
-        res.render(path.resolve(__dirname, '../views/usuarios/login'),{errors:errors.mapped(),old:req.body});        
+        res.render(path.resolve(__dirname, '../views/users/login'),{errors:errors.mapped(),old:req.body,css : "users/login.css"});        
       }
     }
   
