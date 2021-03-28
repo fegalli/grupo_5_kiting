@@ -16,7 +16,6 @@ const validacionesLogin = [
       }
       return false
     }).withMessage('Email no se encuentra registrado'),
-  
     //Aquí valido si la contraseña colocada es la misma a la que tenemos hasheada
     body('password').custom( (value, {req}) =>{
         for (let i = 0; i < archivoUsuarios.length; i++) {

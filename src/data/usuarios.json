@@ -1,8 +1,17 @@
 [
-  
   {
     "email": "micaelalezica@gmail.com",
     "password": "$2a$10$31Vqf.hGvbPbEj1P3dihn.fBrI15dB8Bw95sIS3UYQmg38s4ztzQm",
+    "role": 1
+  },
+  {
+    "email": "fede@fede.com",
+    "password": "$2a$10$VY.f3ba4tXKSQlbosdGDmegFzwqkqzK0FjpHfAyI9WJJBV3DmJQIC",
+    "role": 1
+  },
+  {
+    "email": "admin@fede.com",
+    "password": "$2a$10$XGUVB0MdthUY.o01G7ZrcuSE51Ny3TPJIN0mCDF9yuhwRJVx4n1rO",
     "role": 1
   }
 ]
