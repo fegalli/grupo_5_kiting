@@ -34,7 +34,7 @@ module.exports = {
           } else {
             users = JSON.parse(archivoUsers);
           };
-    
+
           users.push(user);
           usersJSON = JSON.stringify(users, null, 2);
           fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
@@ -55,10 +55,9 @@ module.exports = {
         return res.redirect('/');   
 
       }else{
-    
         res.render(path.resolve(__dirname, '../views/users/login'),{errors:errors.mapped(),old:req.body,css : "users/login.css"});        
       }
     }
-  
+    
   
   }

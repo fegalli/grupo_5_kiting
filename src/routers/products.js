@@ -11,9 +11,3 @@ router.get("/products", controllerProducts.allProducts)
 // router.get('/products/:id',controler.products // Detalle de un producto en particular
 
 module.exports = router;
-
-/// PARA PENSAR LUEGO
-
-// const { Router } = require("express");
-// const ControllersProducts = require("../controllers/ControllersProducts");
-// Router.delete("delete/:id",ControllersProducts.destroy)
