@@ -52,9 +52,6 @@ module.exports = {
         let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
         delete usuarioLogueado.password;
         req.session.usuario = usuarioLogueado;  
-        if(req.body.recordarme){
-          res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
-        }
         return res.redirect('/');   
 
       }else{

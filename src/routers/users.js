@@ -31,11 +31,25 @@ const validacionesLogin = [
         
     }).withMessage('Usurio o contraseña no coinciden'),
 ]
+const validacionesRegistro = [
+    
+      body('email').isEmail().withMessage('Agregar un email válido'),
+
+  
+      body('confirm').custom((value, {req}) =>{
+          if(req.body.password == value ){
+              return true    // Si yo retorno un true  no se muestra el error     
+          }else{
+              return false   // Si retorno un false si se muestra el error
+          }    
+      }).withMessage('Las contraseñas deben ser iguales'),
+
+    ]
 
 
 router.get('/login', controllerUsers.login)
 router.post('/login', validacionesLogin,controllerUsers.ingresar)
 router.get('/register', controllerUsers.register)
-router.post('/register', controllerUsers.create)
+router.post('/register', validacionesRegistro, controllerUsers.create)
 
 module.exports = router;

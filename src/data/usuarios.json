@@ -1,8 +1,12 @@
 [
-  
   {
     "email": "micaelalezica@gmail.com",
     "password": "$2a$10$31Vqf.hGvbPbEj1P3dihn.fBrI15dB8Bw95sIS3UYQmg38s4ztzQm",
+    "role": 1
+  },
+  {
+    "email": "mlezica@gmail.com",
+    "password": "$2a$10$cQKVYH9J0YJ9kMupJL6iSeDaZorqVnju4EEiubRHY3zWmwFZv1JGW",
     "role": 1
   }
 ]
