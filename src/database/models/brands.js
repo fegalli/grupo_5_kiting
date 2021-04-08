@@ -1,18 +1,12 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'Users';
+    let alias = 'Brands';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        email: {
-            type: dataTypes.TEXT
-        },
-        created: {
-            type: dataTypes.DATETIME
-        },
-        password: {
+        brand: {
             type: dataTypes.TEXT
         }
     }
@@ -20,7 +14,7 @@ module.exports = (sequelize, dataTypes) =>{
         tableName: 'kiting',
         timestamps: false
     }   
-    const User = sequelize.define(alias,cols,config);
-    return User;
+    const Brand = sequelize.define(alias,cols,config);
+    return Brand;
 
 }
