@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'Styles';
+    let alias = 'Style';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -15,6 +15,15 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps: false
     }   
     const Style = sequelize.define(alias,cols,config);
+    Style.associate = function(modelos){
+        Style.hasMany(modelos.style,{
+            as:"product",
+            foreignKey: "style_id"
+        })
+    }
+
+
+
     return Style;
 
 }

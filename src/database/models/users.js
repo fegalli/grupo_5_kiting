@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'Users';
+    let alias = 'User';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -21,6 +21,17 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps: false
     }   
     const User = sequelize.define(alias,cols,config);
+
+    User.associate =function (modelos){
+        User.belongsTo(modelos.Product,{
+            as: "products_user",
+            through:"productsusers", 
+            foreignKey: "user_id",
+            orderKey:"product_id",
+            timestamps: false
+
+    })
+}
     return User;
 
 }

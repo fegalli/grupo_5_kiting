@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'Brands';
+    let alias = 'Brand';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -15,6 +15,15 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps: false
     }   
     const Brand = sequelize.define(alias,cols,config);
+    Brand.associate = function(modelos){
+        Brand.hasMany(modelos.brand,{
+            as:"product",
+            foreignKey: "brand_id"
+        })
+    }
+    
+    
     return Brand;
 
 }
+
