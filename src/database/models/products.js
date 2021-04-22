@@ -21,16 +21,16 @@ module.exports = (sequelize, dataTypes) =>{
         nameId: {
             type: dataTypes.INTEGER
         },
-        size_id: {
+        sizeId: {
             type: dataTypes.INTEGER
         },
-        colour_id: {
+        colourId: {
             type: dataTypes.INTEGER
         },
-        brand_id: {
+        brandId: {
             type: dataTypes.INTEGER
         },
-        style_id: {
+        styleId: {
             type: dataTypes.INTEGER
         }
     }
@@ -43,30 +43,30 @@ module.exports = (sequelize, dataTypes) =>{
     Product.associate = function(modelos){
         Product.belongsTo(modelos.brand,{
             as:"brands",
-            foreignKey: "brand_id"
+            foreignKey: "brandId"
         })
         Product.belongsTo(modelos.colour,{
             as:"colours",
-            foreignKey: "colour_id"
+            foreignKey: "colourId"
     })
         Product.belongsTo(modelos.style,{
         as:"styles",
-        foreignKey: "style_id"
+        foreignKey: "styleId"
 })
        Product.belongsToMany(models.User,{
         as: "productUser",
         through:"productUsers", 
-        foreignKey: "product_id",
-        orderKey:"user_id",
+        foreignKey: "productId",
+        orderKey:"userId",
         timestamps: false
 })  
         Product.belongsTo(modelos.name,{
         as:"names",
-        foreignKey: "name_id"
+        foreignKey: "nameId"
 })
         Product.belongsTo(modelos.size,{
         as:"sizes",
-        foreignKey: "size_id"
+        foreignKey: "sizeId"
 })
 
 }
