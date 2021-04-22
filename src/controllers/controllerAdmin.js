@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models');
 
 module.exports = {
     // (en el paralelo con dani se deberia llamar productsINDEX)

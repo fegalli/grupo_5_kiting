@@ -9,12 +9,6 @@ module.exports = (sequelize, dataTypes) =>{
         comments: {
             type: dataTypes.TEXT
         },
-        created: {
-            type: dataTypes.DATETIME
-        },
-        updated: {
-            type: dataTypes.DATETIME
-        },
         price: {
             type: dataTypes.INTEGER
         },
@@ -48,7 +42,7 @@ module.exports = (sequelize, dataTypes) =>{
         Product.belongsTo(modelos.colour,{
             as:"colours",
             foreignKey: "colourId"
-    })
+        })
         Product.belongsTo(modelos.style,{
         as:"styles",
         foreignKey: "styleId"

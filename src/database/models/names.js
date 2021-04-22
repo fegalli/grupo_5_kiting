@@ -14,15 +14,13 @@ module.exports = (sequelize, dataTypes) =>{
         tableName: 'kiting',
         timestamps: false
     }   
-    const name = sequelize.define(alias,cols,config);
+    const Name = sequelize.define(alias,cols,config);
+    
     Name.associate = function(modelos){
-        Name.hasMany(modelos.name,{
+        Name.hasMany(modelos.Name,{
             as:"product",
             foreignKey: "nameId"
         })
     }
-
-
-    return name;
-
+    return Name;
 }
