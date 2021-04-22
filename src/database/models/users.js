@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) =>{
     const User = sequelize.define(alias,cols,config);
 
     User.associate =function (modelos){
-        User.belongsTo(modelos.Product,{
-            as: "products_user",
-            through:"productsusers", 
+        User.belongsToMany(modelos.Product,{
+            as: "productsUser",
+            through:"productsUsers", 
             foreignKey: "user_id",
             orderKey:"product_id",
             timestamps: false

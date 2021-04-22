@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) =>{
         price: {
             type: dataTypes.INTEGER
         },
-        name_id: {
+        nameId: {
             type: dataTypes.INTEGER
         },
         size_id: {
@@ -42,30 +42,30 @@ module.exports = (sequelize, dataTypes) =>{
     
     Product.associate = function(modelos){
         Product.belongsTo(modelos.brand,{
-            as:"brand",
+            as:"brands",
             foreignKey: "brand_id"
         })
         Product.belongsTo(modelos.colour,{
-            as:"colour",
+            as:"colours",
             foreignKey: "colour_id"
     })
         Product.belongsTo(modelos.style,{
-        as:"style",
+        as:"styles",
         foreignKey: "style_id"
 })
-       Product.belongsTo(models.User,{
-        as: "products_user",
-        through:"productsusers", 
+       Product.belongsToMany(models.User,{
+        as: "productUser",
+        through:"productUsers", 
         foreignKey: "product_id",
         orderKey:"user_id",
         timestamps: false
 })  
         Product.belongsTo(modelos.name,{
-        as:"name",
+        as:"names",
         foreignKey: "name_id"
 })
         Product.belongsTo(modelos.size,{
-        as:"size",
+        as:"sizes",
         foreignKey: "size_id"
 })
 
