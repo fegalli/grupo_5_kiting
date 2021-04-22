@@ -35,30 +35,30 @@ module.exports = (sequelize, dataTypes) =>{
     const Product = sequelize.define(alias,cols,config);
     
     Product.associate = function(modelos){
-        Product.belongsTo(modelos.brand,{
-            as:"brands",
+        Product.belongsTo(modelos.Brand,{
+            as:"brand",
             foreignKey: "brandId"
         })
-        Product.belongsTo(modelos.colour,{
-            as:"colours",
+        Product.belongsTo(modelos.Colour,{
+            as:"colour",
             foreignKey: "colourId"
         })
-        Product.belongsTo(modelos.style,{
-        as:"styles",
+        Product.belongsTo(modelos.Style,{
+        as:"style",
         foreignKey: "styleId"
 })
-       Product.belongsToMany(models.User,{
-        as: "productUser",
+       Product.belongsToMany(modelos.User,{
+        as: "Users",
         through:"productUsers", 
         foreignKey: "productId",
         orderKey:"userId",
         timestamps: false
 })  
-        Product.belongsTo(modelos.name,{
-        as:"names",
+        Product.belongsTo(modelos.Name,{
+        as:"name",
         foreignKey: "nameId"
 })
-        Product.belongsTo(modelos.size,{
+        Product.belongsTo(modelos.Size,{
         as:"sizes",
         foreignKey: "sizeId"
 })

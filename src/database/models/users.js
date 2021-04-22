@@ -9,9 +9,7 @@ module.exports = (sequelize, dataTypes) =>{
         email: {
             type: dataTypes.TEXT
         },
-        created: {
-            type: dataTypes.DATETIME
-        },
+    
         password: {
             type: dataTypes.TEXT
         }
