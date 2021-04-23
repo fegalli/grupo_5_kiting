@@ -4,14 +4,16 @@ const db = require('../database/models');
 
 module.exports = {
     // (en el paralelo con dani se deberia llamar productsINDEX)
-    index : (req,res) => {
-        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
-        //return res.sendFile(path.resolve(__dirname,"../data/products.json"))
-        return res.render('./admin/products'
-            ,{ css: '/admin/products.css',
-            productos
-        })
-    },
+    index: (req,res) => {
+        db.Product.findAll()
+            .then(function(products){
+                return res.render('./admin/products'
+                ,{ css: '/admin/products.css'
+                , products
+                })
+            })
+        },
+    
     //Se muestra el formualrio de creacion
     productsCreate : (req, res) =>{
         return res.render ("./admin/productsCreate",{
@@ -74,6 +76,12 @@ module.exports = {
         return res.redirect('/admin/products')
     },
     // Se el detalle de un producto en particular
+    // productsShow: (req,res) => {
+    //     db.Product.findByPk(req.params.id)
+    //         .then(function(miProducto)=>{
+
+    //         })
+    // }
     productsShow : (req, res) => {
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
         let miProducto = productos.find(producto => {
@@ -94,7 +102,15 @@ module.exports = {
     }
 }
 
-
+// CRUD OLD FASHION
+// index : (req,res) => {
+//     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+//     //return res.sendFile(path.resolve(__dirname,"../data/products.json"))
+//     return res.render('./admin/products'
+//         ,{ css: '/admin/products.css',
+//         productos
+//     })
+// },
 
 //AYUDA PARA  LEVANTAR LA FOTO CON MULTER //
         // let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));

@@ -20,8 +20,8 @@ const storage = multer.diskStorage({
 })
 const uploadFile = multer({storage})
 
-router.get('/admin/products',acceso,controllerAdmin.index) // Listado de productos
-router.get('/admin/products/:id',acceso, controllerAdmin.productsShow)   // Se muestra un producto en particular
+router.get('/admin/products',controllerAdmin.index) // Listado de productos
+router.get('/admin/products/:id', controllerAdmin.productsShow)   // Se muestra un producto en particular
 router.get('/admin/create',acceso, controllerAdmin.productsCreate) // Formulario de creaction de productos
 router.post('/admin/create',acceso,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
 router.get('/admin/edit/:id',acceso, controllerAdmin.productEdit) // Formulario de edicion de un producto
