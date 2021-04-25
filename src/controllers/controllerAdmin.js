@@ -6,13 +6,13 @@ module.exports = {
     // (en el paralelo con dani se deberia llamar productsINDEX)
     index: (req,res) => {
         db.Product.findAll()
-            .then(function(products){
-                return res.render('./admin/products'
-                ,{ css: '/admin/products.css'
-                , products
-                })
+        .then(function(products){
+            return res.render('./admin/products',{
+                css : '/admin/products.css' ,
+                products
             })
-        },
+        })
+     },
     
     //Se muestra el formualrio de creacion
     productsCreate : (req, res) =>{
@@ -20,25 +20,19 @@ module.exports = {
         css: "/admin/productsCreate.css"})
     },
     // Accion de crear un producto
+    
+  
+    // Accion de crear un producto
     productsSave : (req,res) => {
-        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
-        let ultimoProducto = productos.pop()
-        productos.push(ultimoProducto)
-        let nuevoProducto = {
-            id : ultimoProducto.id + 1,
-            name : req.body.name ,
+        db.Product.create({
+            price    : req.body.price,
             comments : req.body.comments,
-            imagen : req.file.filename,
-            brand : req.body.brand ,
-            price : req.body.price,
-            colour : req.body.colour,
-            size : req.body.size,
-            style: req.body.style
-        }
-        productos.push(nuevoProducto)
-        let nuevoProductoJson = JSON.stringify(productos, null, 2)
-        fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
-        res.redirect('/admin/products')
+            nameId   : req.body.name,
+            sizeId   : req.body.size,
+            brandId  : req.body.brand,
+            styleId  : req.body.style 
+        });
+        res.redirect('/admin/create')
     },
     // Se muestra el formulario de edicion de un producto
     productEdit : (req, res) => {
@@ -76,12 +70,6 @@ module.exports = {
         return res.redirect('/admin/products')
     },
     // Se el detalle de un producto en particular
-    // productsShow: (req,res) => {
-    //     db.Product.findByPk(req.params.id)
-    //         .then(function(miProducto)=>{
-
-    //         })
-    // }
     productsShow : (req, res) => {
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
         let miProducto = productos.find(producto => {
@@ -91,18 +79,26 @@ module.exports = {
         });
         res.send(miProducto)
     },
+    productsShow : (req,res) => {
+        db.Product.findByPk()
+            .then((product)=>{
+                res.json(product)
+            })
+    },
     // Accion de eliminar un producto
-    destroy : (req, res) => {
-        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
-        const productoDeleteId = req.params.id;
-        const productosFinal = productos.filter(productos => productos.id != productoDeleteId);
-        let productosFinalJSON = JSON.stringify(productosFinal, null, 2)
-        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'),productosFinalJSON);
-        return res.redirect('/admin/products') //res.send("El producto ha sido borrado exitosamente");
+    destroy : (req,res) =>{
+        db.Products.delete({
+            where : {
+                id : req.params.id
+            }
+        });
+        res.redirect('/admin/products')
     }
 }
 
-// CRUD OLD FASHION
+// --------------------------
+// ---- CRUD OLD FASHION ---- 
+// --------------------------
 // index : (req,res) => {
 //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
 //     //return res.sendFile(path.resolve(__dirname,"../data/products.json"))
@@ -111,6 +107,36 @@ module.exports = {
 //         productos
 //     })
 // },
+// productsSave : (req,res) => {
+    //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+    //     let ultimoProducto = productos.pop()
+    //     productos.push(ultimoProducto)
+    //     let nuevoProducto = {
+    //         id : ultimoProducto.id + 1,
+    //         name : req.body.name ,
+    //         comments : req.body.comments,
+    //         imagen : req.body.comments,
+    //         brand : req.body.brand ,
+    //         price : req.body.price,
+    //         colour : req.body.colour,
+    //         size : req.body.size,
+    //         style: 
+    //     }
+    //     productos.push(nuevoProducto)
+    //     let nuevoProductoJson = JSON.stringify(productos, null, 2)
+    //     fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),nuevoProductoJson)
+        
+    // },
+        // destroy : (req, res) => {
+    //     let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json')))
+    //     const productoDeleteId = req.params.id;
+    //     const productosFinal = productos.filter(productos => productos.id != productoDeleteId);
+    //     let productosFinalJSON = JSON.stringify(productosFinal, null, 2)
+    //     fs.writeFileSync(path.resolve(__dirname, '../data/products.json'),productosFinalJSON);
+    //     return res.redirect('/admin/products') //res.send("El producto ha sido borrado exitosamente");
+    // },
+
+
 
 //AYUDA PARA  LEVANTAR LA FOTO CON MULTER //
         // let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));
