@@ -6,10 +6,10 @@ module.exports = {
     // (en el paralelo con dani se deberia llamar productsINDEX)
     index: (req,res) => {
         db.Product.findAll()
-        .then(function(products){
+        .then(function(productos){
             return res.render('./admin/products',{
                 css : '/admin/products.css' ,
-                products
+                productos
             })
         })
      },
@@ -19,28 +19,33 @@ module.exports = {
         return res.render ("./admin/productsCreate",{
         css: "/admin/productsCreate.css"})
     },
+
     // Accion de crear un producto
     productsSave : (req,res) => {
         db.Product.create({
-            id : 1, // hago esto para tratar saltear el error "Field 'id' doesn't have a default value"
-            price    : req.body.price,
-            comments : req.body.comments,
-            nameId   :  req.body.name,
-            sizeId   :  req.body.size,
-            brandId  :  req.body.brand,
-            styleId  :  req.body.style 
-        });
+           // id : 5, // hago esto para tratar saltear el error "Field 'id' doesn't have a default value"
+            // price    : 1,//req.body.price,
+            // comments : 1,//req.body.comments,
+            // nameId   :  1,//req.body.name,
+            // sizeId   :  1,//req.body.size,
+            // brandId  :  1,//req.body.brand,
+            // colourId : 1,
+            // styleId  :  1//req.body.style 
+        })
         res.redirect('/admin/create')
     },
     // Se muestra el formulario de edicion de un producto
     productEdit: (req,res) =>{
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id,{
+            include: [ brand , size
+            ]})
             .then(product=>{
                 return res.render ("./admin/productEdit",{
                     css:"/admin/productEdit.css",
-                    product
-                })
+                    product,
+                }) 
             })
+                   
     },
     // accion de editar un producto 
     productUpdate : (req,res) => {
@@ -69,7 +74,7 @@ module.exports = {
     },
     // Accion de eliminar un producto
     destroy : (req,res) =>{
-        db.Products.delete({
+        db.Product.destroy({
             where : {
                 id : req.params.id
             }

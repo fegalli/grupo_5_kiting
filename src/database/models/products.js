@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) =>{
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         comments: {
             type: dataTypes.TEXT
@@ -65,6 +66,5 @@ module.exports = (sequelize, dataTypes) =>{
 
 }
     return Product;
-
 }
 

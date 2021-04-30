@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) =>{
         }
     }
     let config = {
-        tableName: 'kiting',
+        tableName: 'styles',
         timestamps: false
     }   
     const Style = sequelize.define(alias,cols,config);

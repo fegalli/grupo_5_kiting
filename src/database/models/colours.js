@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) =>{
         }
     }
     let config = {
-        tableName: 'kiting',
+        tableName: 'colours',
         timestamps: false
     }   
     const Colour = sequelize.define(alias,cols,config);
