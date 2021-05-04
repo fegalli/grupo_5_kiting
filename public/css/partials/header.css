@@ -1,5 +1,9 @@
 /* -------------- HEADER -------------------- */
-
+*{
+    color:#000;
+text-decoration:none
+    
+}
 header{
     height: 48px;
     border-style:solid;
