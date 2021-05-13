@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const { body } = require('express-validator')
+const {check} = require("express-validator")
 
 
 const controllerUsers = require('../controllers/controllerUsers')
@@ -34,7 +35,6 @@ const validacionesRegistro = [
     
       body('email').isEmail().withMessage('Agregar un email válido'),
 
-  
       body('confirm').custom((value, {req}) =>{
           if(req.body.password == value ){
               return true    // Si yo retorno un true  no se muestra el error     
@@ -42,6 +42,22 @@ const validacionesRegistro = [
               return false   // Si retorno un false si se muestra el error
           }    
       }).withMessage('Las contraseñas deben ser iguales'),
+      //Aqui valido que el email no este registrado previamente
+        body('email').custom( (value, {req}) =>{
+            for (let i = 0; i < archivoUsuarios.length; i++) {
+                if (archivoUsuarios[i].email == req.body.email) {
+                    if(bcrypt.compareSync(value, archivoUsuarios[i].email)){
+              return false;
+            }else{
+              return true;
+            }
+        }
+    }
+        }).withMessage('El correo ya fue ingresado previamente'),
+// Chequeo que haya contraseña y que el minimo sea 8 caracteres
+    check('password')
+            .notEmpty().withMessage('Debes ingresar una contraseña').bail()
+            .isLength({min: 8}).withMessage('Debes ingresar una contraseña con 8 caractéres como mínimo'),
 
     ]
 

@@ -40,7 +40,7 @@ module.exports = {
           fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
           res.redirect('/login');
         } else {
-            return res.render(path.resolve(__dirname, '../views/usuarios/registro'), {
+            return res.render(path.resolve(__dirname, '../views/users/register'), {
             errors: errors.errors,  old: req.body
           });
         }

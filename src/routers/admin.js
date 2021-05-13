@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const path = require('path');
+const {check} = require("express-validator")
 
 
 const controllerAdmin    = require('../controllers/controllerAdmin')
@@ -20,10 +21,23 @@ const storage = multer.diskStorage({
 })
 const uploadFile = multer({storage})
 
+
+const validacionesProducto = [
+    check('name').notEmpty().withMessage('Debes ingresar un nombre para el producto'),
+    check('style').notEmpty().withMessage('Debes ingresar el estilo del producto'),
+    check('size').notEmpty().withMessage('Debes ingresar el tamaño del producto'),
+    check('brand').notEmpty().withMessage('Debes ingresar la marca del producto'),
+    check('colour').notEmpty().withMessage('Debes ingresar el color del producto'),
+    check('price').notEmpty().isInt().withMessage("Debes ingresar un precio valido"),
+    check('description')
+            .notEmpty().withMessage('Debes ingresar una descripcion').bail()
+            .isLength({min: 20}).withMessage('Debes ingresar una descripción con 20 caractéres como mínimo')
+]
+
 router.get('/admin/products',controllerAdmin.index) // Listado de productos
 router.get('/admin/products/:id', controllerAdmin.productsShow)   // Se muestra un producto en particular
 router.get('/admin/create', controllerAdmin.productsCreate) // Formulario de creaction de productos
-router.post('/admin/create',uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.post('/admin/create',validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
 router.get('/admin/edit/:id',acceso, controllerAdmin.productEdit) // Formulario de edicion de un producto
 router.put('/admin/edit/:id',uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
 router.get('/admin/delete/:id', controllerAdmin.destroy) // Accion de eliminar un producto
