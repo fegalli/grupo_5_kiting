@@ -31,36 +31,36 @@ module.exports = (sequelize, dataTypes) =>{
     }
     let config = {
         tableName: 'products',
-        timestamps: false
+        timestamps: true
     }   
     const Product = sequelize.define(alias,cols,config);
     
     Product.associate = function(modelos){
         Product.belongsTo(modelos.Brand,{
-            as:"brand",
+            // as:"brand",
             foreignKey: "brandId"
         })
         Product.belongsTo(modelos.Colour,{
-            as:"colour",
+            // as:"colour",
             foreignKey: "colourId"
         })
         Product.belongsTo(modelos.Style,{
-        as:"style",
+        // as:"style",
         foreignKey: "styleId"
 })
        Product.belongsToMany(modelos.User,{
-        as: "Users",
+        // as: "Users",
         through:"productUsers", 
         foreignKey: "productId",
         orderKey:"userId",
         timestamps: false
 })  
         Product.belongsTo(modelos.Name,{
-        as:"name",
+        // as:"name",
         foreignKey: "nameId"
 })
         Product.belongsTo(modelos.Size,{
-        as:"sizes",
+        // as:"sizes",
         foreignKey: "sizeId"
 })
 

@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const { json } = require('express');
+const db = require('../database/models');
+
 
 module.exports = {
     productCart : (req, res)=>{
@@ -27,7 +28,31 @@ module.exports = {
             ,{ css: '/products/allProducts.css',
             productos
         })
-    }
+    },
+    // Accion de buscar y mostrar un set de productos
+    find: (req,res) => {
+        // probe: req.params ententiendo que viene por get
+        // req.body cuando lo hice por post
+        // intente usar el objeto 'location' pero no me lo reconoce
+        // let query = new URLSearchParams(location.search)
+        // console.log(query) --> error : 'location is not defined' 
+        db.Product.findAll({
+            include: [db.Brand, db.Size, db.Colour, db.Name, db.Style],
+            where: {
+                nameId   : 1,//req.params.nameId,
+                sizeId   : 1,//req.body.size,
+                colourId : 1,//req.body.colour,
+                brandId  : 1,//req.body.brand,
+                styleId  : 1//req.body.style 
+            }
+            })
+        .then(function(productos){
+            return res.render('./products/products',{
+                css : '/admin/products.css' ,
+                productos
+            })
+        })
+        }
 }
 
 
