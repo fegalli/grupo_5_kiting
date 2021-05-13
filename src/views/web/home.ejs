@@ -10,49 +10,55 @@
             <div class="airbnb-box">
                 <h1 id="title-airbnb-box">Encuentra tu próximo equipo en Kiting</h1>
                 <p id="description-airbnb-box">Cada cometa es diferente, asegurarte de que eliges la cometa indicada para tu estilo preferido</p> 
-                <form  class="formulario>" action="/" method="POST"> 
+          
+                <form  class="formulario>" action="/products" method="POST"> 
                     <div>
                         <div class="form-level1-element">  <!-- este div me permite customizar el estilo de boton + etiqueta -->          
                             <label for='style'>¿Qué estilo estas buscando?</label><br>
                             <div class='form-level1' id="form-product"> <!--este div me permite tener la primer pregunta en un solo renglon -->
-                                <input type="radio" name = "style" id = "style"  value="all">Todos</option>
-                                <input type="radio" name = "style" id = "style"  value="surf">Surf</option>
-                                <input type="radio" name = "style" id = "style"  value="freeride">Freeride</option>
-                                <input type="radio" name = "style" id = "style"  value="freestyle">Freestyle</option>
+                                <% for(let i= 0; i < styles.length; i++){ %>
+                                <input type="radio" name = "style" id = "style"  value=<%=styles[i].id%>><%=styles[i].style%></option>
+                                <%}%>
                             </div>
                         </div>
                         <div class="form-level2"> <!--este div me permite tener la pregunta 2 y 3 en el mismo renglon -->
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
-                                <label for="name">¿Qué marca estas buscando?</label><Br>
+                                <label for="name">¿Qué modelo estas buscando?</label><Br>
                                     <select name="name" id="form-style">
-                                        <option id="name" value="all">Todos</option>
+                                        <% for(let i= 0; i < names.length; i++){ %>
+                                            <option id="name" value= <%=names[i].id%>><%=names[i].name%></option>
+                                            <% } %>
                                     </select>
                             </div>
                             <div class="form-level2-element"> <!--este div me permite tener la pregunta que la pregunta 2 se comporte como un bloque -->
-                            <label for="brand">¿Qué tamaño estas buscando?</label><Br>
+                            <label for="brand">¿Qué marca estas buscando?</label><Br>
                                 <select name="brand" id="form-brand">
-                                    <option id="brand" value="all" selected>Todos</option>               
-                                    <option id="brand" value="north">North</option>
-                                    <option id="brand" value="duotone">Duotone</option>
-                                    <option id="brand" value="cabrinha">Cabrinha</option>
-                                </select>  
+                                <% for(let i= 0; i < brands.length; i++){ %>           
+                                    <option id="brand" value= <%=brands[i].id%> ><%=brands[i].brand%></option>               
+                                    <%}%>
+                                </select>
                              </div>
                         </div>
                         <div class="form-level3">
                             <div class="form-level3-element">
                                 <label for="size">¿Qué tamaño estas buscando?</label><Br>
-                                    <select name="size"id="form-size">                       
-                                        <option id="size" value="all" selected>Todos</option>
+                                    <select name="size"id="form-size">               
+                                        <% for(let i= 0; i < sizes.length; i++){ %>           
+                                            <option id="size" value=<%=sizes[i].id%>><%=sizes[i].size%></option>  
+                                            <%}%>        
                                     </select>
                             </div>
                             <div class="form-level3-element">
                                 <label for="colour">¿Qué color estas buscando?</label><Br>
                                 <select name="colour" id="form-colour">
-                                    <option id="colour" value="all" selected>Todos</option>
+                                    <% for(let i= 0; i < colours.length; i++){ %>   
+                                        <option id="colour" value= <%=colours[i].id%>> <%=colours[i].colour%></option>
+                                       <%}%>
                                 </select>
                             </div>
                         </div>
-                        <br><button type="submit" id='form-button-enviar'><a href="../products/allProducts.ejs"></a>Buscar</button>
+                        <br><button type="submit" id='form-button-enviar'>Buscar</button>
+                        <!-- <a href="../products/allProducts.ejs"></a> -->
                     </div>
                 </form>
             </div>
@@ -63,7 +69,8 @@
             <article id="article-surf">
                 <h2 id="title-surf">SURF COLLECTION</h2>
                 <p id="description-surf">Our 2021 Surf Collection is designed to give you all the feels and don’t ride the water, be the water</p>
-                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>   
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/products/style/1">Comprar ></a></button>   
+
             </article>
             <figure class="kiting-style-figures" id="figure-surf"></figure>
         </section>
@@ -74,7 +81,7 @@
             <article id="article-freestyle">
                 <h2 id="title-freestyle">FREESTYLE COLLECTION</h2>
                 <p id="description-freestyle">Dance it out, let yourself go. Parkour, ocean style. This is your playground</p>  
-                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>  
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/products/style/3">Comprar ></a></button>  
             </article>
             <figure class="kiting-style-figures" id="figure-freestyle"></figure>
         </section>
@@ -85,7 +92,7 @@
             <article id="article-freeride">
                 <h2 id="title-freeride">FREERIDE COLLECTION</h2>
                 <p id="description-freeride">Sensing your kite’s position is second nature with the Navigator – designed for the ultimate intuitive feeling so that you can think less and feel more</p>
-                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/productDetail">Comprar ></a></button>
+                <button class= 'button-comprar' type="button" ><a class= 'a-comprar' href="/products/style/2">Comprar ></a></button>
             </article>
             <figure class="kiting-style-figures" id="figure-freeride"></figure>  
         </section>

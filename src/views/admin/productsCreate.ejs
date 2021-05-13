@@ -11,49 +11,42 @@
         <div class = "titulo">Creacion de productos</div>
         <label for='name'>¿Qué name estas creando?</label>
         <select name="name" id="form-style">
-             <option id="name" value="all">Todos</option>
-             <option id="name" value="dice">Dice</option>
-             <option id="name" value="rebel">Rebel</option>
-             <option id="name" value="orbit">Orbit</option>
+            <% for(let i= 0; i < names.length; i++){ %>
+             <option id="name" value=<%=names[i].id%>><%=names[i].name%></option>
+             <% } %>
          </select>
          <br>
          <label for='style'>¿Qué style estas creando?</label>
          <select name="style" id="form-style">
-             <option id="style" value="all">Todos</option>
-             <option id="style" value="surf">Surf</option>
-             <option id="style" value="freeride">Freeride</option>
-             <option id="style" value="freestyle">Freestyle</option>
+            <% for(let i= 0; i < styles.length; i++){ %>
+             <option id="style" value=<%=styles[i].id%>><%=styles[i].style%></option>
+            <%}%>
          </select>
          <br>
          <label for='size'>¿Qué size estas creando?</label> 
-        <select name="size"id="form-size">                 
-             <option id="size" value="all" selected>Todos</option>  
-             <option id="size" value="all" >5</option>
-             <option id="size" value="all" >7</option>
-             <option id="size" value="all" s>9</option>
-             <option id="size" value="all" >12</option>
-             <option id="size" value="all" >15</option>
+        <select name="size"id="form-size">  
+             <% for(let i= 0; i < sizes.length; i++){ %>           
+             <option id="size" value=<%=sizes[i].id%>><%=sizes[i].size%></option>  
+             <%}%>
          </select> 
          <br>
          <label for='brand'>¿Qué brand estas creando?</label>
          <select name="brand" id="form-brand">
-             <option id="brand" value="all" selected>Todos</option>               
-             <option id="brand" value="north">North</option>
-             <option id="brand" value="duotone">Duotone</option>
-             <option id="brand" value="cabrinha">Cabrinha</option>
+             <% for(let i= 0; i < brands.length; i++){ %>           
+             <option id="brand" value= <%=brands[i].id%> ><%=brands[i].brand%></option>               
+             <%}%>
          </select>  
          <br>
          <label for='colour'>¿Qué colour estas creando?</label>
          <select name="colour" id="form-colour">
-             <option id="colour" value="all" selected>Todos</option>
-             <option id="colour" value="red">Azul</option>
-             <option id="colour" value="blue" >Rojo</option>
-             <option id="colour" value="yellow" >Amarillo</option>
+            <% for(let i= 0; i < colours.length; i++){ %>   
+             <option id="colour" value= <%=colours[i].id%>> <%=colours[i].colour%></option>
+            <%}%>
          </select>
          <div>
              <div class ="precio">
              <label for="price">Precio del producto</label></div>
-             <div><input type="number" name = "price"></div>
+             <div><input type="number" name = "price"> </div>
          </div>
          <div class="imagen">
              <label for="imagen"> Imagen del producto</label> 

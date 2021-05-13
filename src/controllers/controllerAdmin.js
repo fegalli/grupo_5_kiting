@@ -3,9 +3,11 @@ const fs = require('fs');
 const db = require('../database/models');
 
 module.exports = {
-    // (en el paralelo con dani se deberia llamar productsINDEX)
+    // Se muestra la pantalla de todos los productos
     index: (req,res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include: [db.Brand, db.Size, db.Colour, db.Name, db.Style]
+          })
         .then(function(productos){
             return res.render('./admin/products',{
                 css : '/admin/products.css' ,
@@ -13,56 +15,73 @@ module.exports = {
             })
         })
      },
-    
     //Se muestra el formualrio de creacion
-    productsCreate : (req, res) =>{
-        return res.render ("./admin/productsCreate",{
-        css: "/admin/productsCreate.css"})
-    },
-
+     productsCreate : (req,res) => {
+         const names = db.Name.findAll()
+         const brands = db.Brand.findAll()
+         const colours = db.Colour.findAll()
+         const sizes = db.Size.findAll()
+         const styles = db.Style.findAll()
+         Promise.all([names, brands, colours,sizes,styles])
+            .then(([names, brands, colours,sizes,styles]) => {
+                 res.render ("./admin/productsCreate",{
+                         css: "/admin/productsCreate.css"
+                        ,names
+                        ,brands
+                        ,colours
+                        ,sizes
+                        ,styles })
+            })
+     },
     // Accion de crear un producto
     productsSave : (req,res) => {
         db.Product.create({
-           // id : 5, // hago esto para tratar saltear el error "Field 'id' doesn't have a default value"
-            // price    : 1,//req.body.price,
-            // comments : 1,//req.body.comments,
-            // nameId   :  1,//req.body.name,
-            // sizeId   :  1,//req.body.size,
-            // brandId  :  1,//req.body.brand,
-            // colourId : 1,
-            // styleId  :  1//req.body.style 
+            comments : req.body.comments,
+            price    : req.body.price,
+            nameId   : req.body.name,
+            sizeId   : req.body.size,
+            colourId : req.body.colour,
+            brandId  : req.body.brand,
+            styleId  : req.body.style 
         })
-        res.redirect('/admin/create')
+        res.redirect('/admin/products')
     },
     // Se muestra el formulario de edicion de un producto
-    productEdit: (req,res) =>{
-        db.Product.findByPk(req.params.id,{
-            include: [ brand , size
-            ]})
-            .then(product=>{
-                return res.render ("./admin/productEdit",{
-                    css:"/admin/productEdit.css",
-                    product,
-                }) 
+    productEdit : (req,res) => {
+        const names = db.Name.findAll()
+        const brands = db.Brand.findAll()
+        const colours = db.Colour.findAll()
+        const sizes = db.Size.findAll()
+        const styles = db.Style.findAll()
+        const producto = db.Product.findByPk(req.params.id)
+        Promise.all([names, brands, colours,sizes,styles,producto])
+            .then(([names, brands, colours,sizes,styles,producto]) => {
+                 res.render ("./admin/productEdit",{
+                         css: "/admin/productEdit.css"
+                        ,names
+                        ,brands
+                        ,colours
+                        ,sizes
+                        ,styles
+                        ,producto })
             })
-                   
     },
     // accion de editar un producto 
     productUpdate : (req,res) => {
         db.Product.update({
-            id : 1, // hago esto para tratar saltear el error "Field 'id' doesn't have a default value"
-            price    : req.body.price,
             comments : req.body.comments,
-            nameId   :  req.body.name,
-            sizeId   :  req.body.size,
-            brandId  :  req.body.brand,
-            styleId  :  req.body.style 
+            price    : req.body.price,
+            nameId   : req.body.name,
+            sizeId   : req.body.size,
+            colourId : req.body.colour,
+            brandId  : req.body.brand,
+            styleId  : req.body.style 
         },{
             where : {
                 id : req.params.id
             }
         });
-        res.redirect('/admin/create')
+        res.redirect('/admin/products')
     }, 
     // Se el detalle de un producto en particular
     // Mismo comportamiento que CRUD con json. Se debe mejorar
@@ -83,7 +102,7 @@ module.exports = {
     }
 }
 
-// --------------------------
+// -------------------------- 
 // ---- CRUD OLD FASHION ---- 
 // --------------------------
 // index : (req,res) => {
@@ -93,6 +112,16 @@ module.exports = {
 //         ,{ css: '/admin/products.css',
 //         productos
 //     })
+// },
+    //Se muestra el formualrio de creacion
+//     const platos = Dish.findAll();
+//     const categorias = Category.findAll();
+//     Promise.all([platos,categorias])
+//     .then(([platos,categorias]) =>{
+//         //return res.send(platos)
+//         res.render(path.resolve(__dirname , '..','views','productos','productos') , {platos,categorias});
+//     })
+//     .catch(error => res.send(error))
 // },
 
 // Accion de crear un producto

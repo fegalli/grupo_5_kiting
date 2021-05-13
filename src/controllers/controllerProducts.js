@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const { json } = require('express');
+const db = require('../database/models');
+
 
 module.exports = {
     productCart : (req, res)=>{
@@ -27,7 +28,41 @@ module.exports = {
             ,{ css: '/products/allProducts.css',
             productos
         })
-    }
+    },
+    // Accion de buscar y mostrar un set de productos
+    find: (req,res) => {
+        db.Product.findAll({
+            include: [db.Brand, db.Size, db.Colour, db.Name, db.Style],
+            where: {
+                nameId   : req.body.name,
+                sizeId   : req.body.size,
+                colourId : req.body.colour,
+                brandId  : req.body.brand,
+                styleId  : req.body.style 
+            }
+            })
+        .then(function(productos){
+            return res.render('./products/products',{
+                css : '/admin/products.css' ,
+                productos
+            })
+        })
+        },
+        findStyle: (req,res) => {
+            db.Product.findAll({
+                include: [db.Brand, db.Size, db.Colour, db.Name, db.Style],
+                where: {
+                    styleId  : req.params.id
+                }
+                })
+            .then(function(productos){
+                return res.render('./products/products',{
+                    css : '/admin/products.css' ,
+                    productos
+                })
+            })
+        }
+
 }
 
 
