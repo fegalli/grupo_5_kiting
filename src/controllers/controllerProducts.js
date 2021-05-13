@@ -31,19 +31,14 @@ module.exports = {
     },
     // Accion de buscar y mostrar un set de productos
     find: (req,res) => {
-        // probe: req.params ententiendo que viene por get
-        // req.body cuando lo hice por post
-        // intente usar el objeto 'location' pero no me lo reconoce
-        // let query = new URLSearchParams(location.search)
-        // console.log(query) --> error : 'location is not defined' 
         db.Product.findAll({
             include: [db.Brand, db.Size, db.Colour, db.Name, db.Style],
             where: {
-                nameId   : 1,//req.params.nameId,
-                sizeId   : 1,//req.body.size,
-                colourId : 1,//req.body.colour,
-                brandId  : 1,//req.body.brand,
-                styleId  : 1//req.body.style 
+                nameId   : req.body.name,
+                sizeId   : req.body.size,
+                colourId : req.body.colour,
+                brandId  : req.body.brand,
+                styleId  : req.body.style 
             }
             })
         .then(function(productos){
@@ -52,7 +47,22 @@ module.exports = {
                 productos
             })
         })
+        },
+        findStyle: (req,res) => {
+            db.Product.findAll({
+                include: [db.Brand, db.Size, db.Colour, db.Name, db.Style],
+                where: {
+                    styleId  : req.params.id
+                }
+                })
+            .then(function(productos){
+                return res.render('./products/products',{
+                    css : '/admin/products.css' ,
+                    productos
+                })
+            })
         }
+
 }
 
 
