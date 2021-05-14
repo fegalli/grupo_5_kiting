@@ -50,6 +50,7 @@ module.exports = {
       if(errors.isEmpty()){
         let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+        
         delete usuarioLogueado.password;
         req.session.usuario = usuarioLogueado;  
         return res.redirect('/');   

@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override') // Parte de la confing que nos deja usar put y delete
+const session = require('express-session') // habilitacion de cookies
+const cookieParser = require('cookie-parser')
 
 // Seteo de elementos estaticos 
 app.use(express.static(path.resolve(__dirname, '../public')));
@@ -17,6 +19,15 @@ app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos p
 app.use(express.json())
 app.use(methodOverride('_method'));//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 
+// Configuracion necesaria para el uso de session
+app.use(session({
+    secret: 'grupo_5_kiting',
+    resave: false,
+    saveUninitialized: true
+}));
+// Configuracion necesaria para el manejo de cookies
+app.use(cookieParser());
+
 // Configurando EJS
 app.set('view engine', 'ejs');  // Aca le estoy diciendo a express que voy a utilizar un motor de plantillas y que ese motor es ejs
 app.set('views', './src/views'); // con esta linea le digo a express en que carpeta estan mis vistas. Si no la utizo, por default express ira a buscar una carpeta que se llame -views-
@@ -26,7 +37,8 @@ app.set('views', './src/views'); // con esta linea le digo a express en que carp
 const routerWeb   = require('./routers/web');
 const routerUsers = require('./routers/users');
 const routerProducts = require('./routers/products')
-const routerAdmin = require('./routers/admin')
+const routerAdmin = require('./routers/admin');
+
 
 // Para usar rutas
 app.use(routerWeb);
