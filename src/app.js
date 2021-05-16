@@ -43,8 +43,15 @@ const routerAdmin = require('./routers/admin');
 // Para usar rutas
 app.use(routerWeb);
 app.use(routerUsers)
-app.use(routerProducts)
+app.use(routerProducts) 
 app.use(routerAdmin)
+
+// Configuracion necesaria para el uso de session
+app.use(session({
+    secret: 'grupo_5_kiting',
+    resave: false,
+    saveUninitialized: true
+}));
 
 //Levantar el servidor
 app.listen(process.env.PORT || '3000', () => console.log('Servidor corriendo en el puerto 3000'))

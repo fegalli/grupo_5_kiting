@@ -3,6 +3,8 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const { validationResult } = require('express-validator')
+const { body } = require('express-validator')
+
 
 
 module.exports = {
@@ -38,27 +40,41 @@ module.exports = {
           users.push(user);
           usersJSON = JSON.stringify(users, null, 2);
           fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
-          res.redirect('/login');
+          res.redirect('/');
         } else {
             return res.render(path.resolve(__dirname, '../views/users/register'), {
             errors: errors.errors,  old: req.body
           });
         }
     },
-    ingresar: (req,res) =>{
-      const errors = validationResult(req);
-      if(errors.isEmpty()){
-        let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-        let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
-        
-        delete usuarioLogueado.password;
-        req.session.usuario = usuarioLogueado;  
-        return res.redirect('/');   
+    // ingresar: (req,res) =>{
+    //   const errors = validationResult(req);
+    //   if(errors.isEmpty()){
+    //     let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+    //     let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+    //     delete usuarioLogueado.password;
+    //     req.session.usuario = usuarioLogueado
+    //     return res.redirect('/');   
+    //   }else{
+    //     res.render(path.resolve(__dirname, '../views/users/login'),{errors:errors.mapped(),old:req.body,css : "users/login.css"}); 
+    //   }
+    // }
+    ingresar: (req, res)=>{
+      let userEmail = req.body.email
+      let userPassword = req.body.password
+      // let userPassword = bcrypt.hashSync(req.body.password, 10)
+      let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+      let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+      if (userEmail == usuarioLogueado.email){
+        if(userPassword == usuarioLogueado.password){
+          delete usuarioLogueado.password
+          req.session.usuario = usuarioLogueado
+          return res.redirect('/') // Te llevo a la home, en un futuo llevar a modulo de administrator
+        } else {
+          return res.redirect('/register'); 
+          } 
 
-      }else{
-        res.render(path.resolve(__dirname, '../views/users/login'),{errors:errors.mapped(),old:req.body,css : "users/login.css"});        
       }
     }
-    
   
   }

@@ -2,12 +2,27 @@ const fs = require('fs');
 const path = require('path');
 let usuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
+// module.exports =  (req,res,next) =>{
+//         return res.render('./middlewares/middlewareWIP'
+//         ,{ css: '/web/home.css'
+//         })
+//     }
 module.exports =  (req,res,next) =>{
-        return res.render('./middlewares/middlewareWIP'
-        ,{ css: '/web/home.css'
-        })
-    }
+    console.log(req.session.usuario)
+    return next()
+    // if(req.session.usuario == null){
+    //     console.log('no esta logueado')
+    //     return next()
+    // } else{
+    //     console.log('esta logueado')
+    //     return next()
+    // }
 
+    // otro implementacion:
+    // return res.render('./middlewares/middlewareWIP'
+    // ,{ css: '/web/home.css'
+    // })
+}
         
     // module.exports = (req,res,next) =>{
     //     //Variable locals (super global - vive en las vistas )

@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
+const path = require('path');
 
 const controllerProducts = require('../controllers/controllerProducts')
 
+//Requerir el middleware de prueba
+const acceso = require(path.resolve(__dirname,'../middlewares/acceso'));
 
 
-
-router.get('/productCart', controllerProducts.productCart)
+router.get('/productCart',acceso, controllerProducts.productCart)
 //router.get('/detail/:id', controllerProducts.productDetail)
 //router.get("/products", controllerProducts.allProducts) // pantalla de productos
 router.post("/products", controllerProducts.find) // Accion de buscar un set de productos

@@ -8,5 +8,15 @@
     "email": "mlezica@gmail.com",
     "password": "$2a$10$cQKVYH9J0YJ9kMupJL6iSeDaZorqVnju4EEiubRHY3zWmwFZv1JGW",
     "role": 1
+  },
+  {
+    "email": "admin@fede.com",
+    "password": "$2a$10$I3LQ9AGF6OKVk4ksh3v8rumWgrymMYz9EJvQ3CUzor5OnUo3zA16q",
+    "role": 1
+  },
+  {
+    "email": "admin@admin.com",
+    "password": "admin",
+    "role": 1
   }
 ]
