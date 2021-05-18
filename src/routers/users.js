@@ -73,5 +73,6 @@ router.get('/login', controllerUsers.login) // Se muestra la pantalla de login
 router.post('/login', validacionesLogin,controllerUsers.ingresar) // Accion de loguearse
 router.get('/register', controllerUsers.register)
 router.post('/register', validacionesRegistro, controllerUsers.create)
+
 // 
 module.exports = router;
