@@ -7,7 +7,6 @@ const controllerProducts = require('../controllers/controllerProducts')
 //Requerir el middleware de prueba
 const acceso = require(path.resolve(__dirname,'../middlewares/acceso'));
 
-
 router.get('/productCart',acceso, controllerProducts.productCart) // Accion de ver la pantalla de carrito
 //router.get('/detail/:id', controllerProducts.productDetail)
 //router.get("/products", controllerProducts.allProducts) // pantalla de productos

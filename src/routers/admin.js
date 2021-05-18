@@ -7,8 +7,9 @@ const {check} = require("express-validator")
 
 const controllerAdmin    = require('../controllers/controllerAdmin')
 
-//Requerir el middleware de prueba
+//Requerir el middleware
 const acceso = require(path.resolve(__dirname,'../middlewares/acceso'));
+const accesoAdmin = require(path.resolve(__dirname,'../middlewares/accesoAdmin'));
  
 // CONFIGURACION DE MULTER (Como podemos indicar para subir el archivo nombre y donde guardarlo)
 const storage = multer.diskStorage({
@@ -34,15 +35,15 @@ const validacionesProducto = [
             .isLength({min: 20}).withMessage('Debes ingresar una descripción con 20 caractéres como mínimo')
 ]
 
-router.get('/admin/products',controllerAdmin.index) // Listado de productos
-router.get('/admin/products/:id', controllerAdmin.productsShow)   // Se muestra un producto en particular
-router.get('/admin/create', controllerAdmin.productsCreate) // Formulario de creaction de productos
-router.post('/admin/create',validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
-router.get('/admin/edit/:id',acceso, controllerAdmin.productEdit) // Formulario de edicion de un producto
-router.post('/admin/create',uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
-router.get('/admin/edit/:id', controllerAdmin.productEdit) // Formulario de edicion de un producto
-router.put('/admin/edit/:id',uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
-router.get('/admin/delete/:id', controllerAdmin.destroy) // Accion de eliminar un producto
+router.get('/admin/products',acceso,accesoAdmin,controllerAdmin.index) // Listado de productos
+router.get('/admin/products/:id',accesoAdmin,controllerAdmin.productsShow)   // Se muestra un producto en particular
+router.get('/admin/create', accesoAdmin,controllerAdmin.productsCreate) // Formulario de creaction de productos
+router.post('/admin/create', accesoAdmin,validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/edit/:id', accesoAdmin, controllerAdmin.productEdit) // Formulario de edicion de un producto
+router.post('/admin/create', accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/edit/:id',  accesoAdmin,controllerAdmin.productEdit) // Formulario de edicion de un producto
+router.put('/admin/edit/:id', accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
+router.get('/admin/delete/:id',  accesoAdmin,controllerAdmin.destroy) // Accion de eliminar un producto
 
 module.exports  = router 
 

@@ -26,7 +26,7 @@ module.exports = {
           let user = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10), 
-            role: 1
+            role: req.body.role
           }
           let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
             encoding: 'utf-8'
@@ -64,20 +64,33 @@ module.exports = {
       let userEmail = req.body.email
       let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
       let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
-      if (userEmail == usuarioLogueado.email){
-        bcrypt.compare(req.body.password,10, function(err, response) {
-          if(req.body.password != usuarioLogueado.password){
-            res.redirect('/register?passwordMissMatch=true')
-          } else {
-            delete usuarioLogueado.password
-            req.session.usuario = usuarioLogueado
-            res.redirect('/')
-          }
-        });
-      }
+      if (userEmail == usuarioLogueado.email) {
+        bcrypt.compare(req.body.password,usuarioLogueado.password).then(
+          function(respuesta){
+            if(respuesta == true){
+              delete usuarioLogueado.password
+              req.session.usuario = usuarioLogueado
+              res.redirect('/')
+            } else {
+              res.redirect('/register')
+            }})}
     },
     logout: (req,res) =>{
       delete req.session.usuario
       res.redirect('/')
     }
   }
+
+
+
+        // if (userEmail == usuarioLogueado.email){
+      //   bcrypt.compare(req.body.password,10,function(err, response) {
+      //     if(req.body.password != usuarioLogueado.password){
+      //       res.redirect('/register')
+      //     } else {
+      //       delete usuarioLogueado.password
+      //       req.session.usuario = usuarioLogueado
+      //       res.redirect('/')
+      //     }
+      //   });
+      // }
