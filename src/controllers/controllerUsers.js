@@ -3,7 +3,8 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const { validationResult } = require('express-validator')
-const { body } = require('express-validator')
+const { body } = require('express-validator');
+const { rawListeners } = require('process');
 
 
 
@@ -61,20 +62,22 @@ module.exports = {
     // }
     ingresar: (req, res)=>{
       let userEmail = req.body.email
-      let userPassword = req.body.password
-      // let userPassword = bcrypt.hashSync(req.body.password, 10)
       let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
       let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
       if (userEmail == usuarioLogueado.email){
-        if(userPassword == usuarioLogueado.password){
-          delete usuarioLogueado.password
-          req.session.usuario = usuarioLogueado
-          return res.redirect('/') // Te llevo a la home, en un futuo llevar a modulo de administrator
-        } else {
-          return res.redirect('/register'); 
-          } 
-
+        bcrypt.compare(req.body.password,10, function(err, response) {
+          if(req.body.password != usuarioLogueado.password){
+            res.redirect('/register?passwordMissMatch=true')
+          } else {
+            delete usuarioLogueado.password
+            req.session.usuario = usuarioLogueado
+            res.redirect('/')
+          }
+        });
       }
+    },
+    logout: (req,res) =>{
+      delete req.session.usuario
+      res.redirect('/')
     }
-  
   }

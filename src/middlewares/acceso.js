@@ -8,20 +8,11 @@ let usuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usua
 //         })
 //     }
 module.exports =  (req,res,next) =>{
-    console.log(req.session.usuario)
-    return next()
-    // if(req.session.usuario == null){
-    //     console.log('no esta logueado')
-    //     return next()
-    // } else{
-    //     console.log('esta logueado')
-    //     return next()
-    // }
-
-    // otro implementacion:
-    // return res.render('./middlewares/middlewareWIP'
-    // ,{ css: '/web/home.css'
-    // })
+    if(req.session.usuario == null){
+        return res.redirect('/') // iterar por pantalla mica
+    } else {
+        return next()
+    }
 }
         
     // module.exports = (req,res,next) =>{
