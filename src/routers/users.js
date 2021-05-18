@@ -8,12 +8,12 @@ const {check} = require("express-validator")
 
 
 const controllerUsers = require('../controllers/controllerUsers')
-//prueba para la charla de las 11
+const userLogged = require(path.resolve(__dirname,'../middlewares/userLogged'));
+const acceso = require(path.resolve(__dirname,'../middlewares/acceso'));
+
 let archivoUsuarios =JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
     encoding: 'utf-8'
   }))
-//  console.log(archivoUsuarios)
-//----------
 
 const validacionesLogin = [
     body('email').isEmail().withMessage('Agregar un email válido'), // Me fijo que tenga "formato email"
@@ -69,11 +69,11 @@ const validacionesRegistro = [
     ]
 
 
-router.get('/login', controllerUsers.login) // Se muestra la pantalla de login
-router.post('/login', validacionesLogin,controllerUsers.ingresar) // Accion de loguearse
-router.get('/logout', controllerUsers.logout) // Accion de deslogueo
-router.get('/register', controllerUsers.register)
-router.post('/register',  controllerUsers.create)
+router.get('/login',userLogged, controllerUsers.login) // Se muestra la pantalla de login
+router.post('/login',userLogged, validacionesLogin,controllerUsers.ingresar) // Accion de loguearse
+router.get('/logout',acceso, controllerUsers.logout) // Accion de deslogueo
+router.get('/register',userLogged, controllerUsers.register)
+router.post('/register',userLogged,  controllerUsers.create)
 // validacionesRegistro,
 // 
 module.exports = router;

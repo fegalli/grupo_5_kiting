@@ -36,14 +36,14 @@ const validacionesProducto = [
 ]
 
 router.get('/admin/products',acceso,accesoAdmin,controllerAdmin.index) // Listado de productos
-router.get('/admin/products/:id',accesoAdmin,controllerAdmin.productsShow)   // Se muestra un producto en particular
-router.get('/admin/create', accesoAdmin,controllerAdmin.productsCreate) // Formulario de creaction de productos
-router.post('/admin/create', accesoAdmin,validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
-router.get('/admin/edit/:id', accesoAdmin, controllerAdmin.productEdit) // Formulario de edicion de un producto
-router.post('/admin/create', accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
-router.get('/admin/edit/:id',  accesoAdmin,controllerAdmin.productEdit) // Formulario de edicion de un producto
-router.put('/admin/edit/:id', accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
-router.get('/admin/delete/:id',  accesoAdmin,controllerAdmin.destroy) // Accion de eliminar un producto
+router.get('/admin/products/:id',acceso,accesoAdmin,controllerAdmin.productsShow)   // Se muestra un producto en particular
+router.get('/admin/create',acceso,accesoAdmin,controllerAdmin.productsCreate) // Formulario de creaction de productos
+router.post('/admin/create',acceso,accesoAdmin,validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/edit/:id',acceso,accesoAdmin, controllerAdmin.productEdit) // Formulario de edicion de un producto
+router.post('/admin/create',acceso,accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/edit/:id',acceso,accesoAdmin,controllerAdmin.productEdit) // Formulario de edicion de un producto
+router.put('/admin/edit/:id',acceso,accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productUpdate) // Accion de edicion de un producto
+router.get('/admin/delete/:id',acceso,accesoAdmin,controllerAdmin.destroy) // Accion de eliminar un producto
 
 module.exports  = router 
 

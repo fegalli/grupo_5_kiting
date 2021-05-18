@@ -3,8 +3,9 @@ const path = require('path');
 let usuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
 module.exports =  (req,res,next) =>{
-    if(req.session.usuario.role != 2){
-                return res.render('./middlewares/deniedAccessAdmin'
+    if(req.session.usuario != null ){
+        // return res.redirect('/') 
+                return res.render('./middlewares/userLogged'
         ,{ css: '/web/home.css'
         })
     } else {
