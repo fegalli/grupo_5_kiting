@@ -35,10 +35,10 @@ const validacionesProducto = [
             .isLength({min: 20}).withMessage('Debes ingresar una descripción con 20 caractéres como mínimo')
 ]
 
-router.get('/admin/products',acceso,accesoAdmin,controllerAdmin.index) // Listado de productos
+router.get('/admin/products', acceso,accesoAdmin,controllerAdmin.index) // Listado de productos
 router.get('/admin/products/:id',acceso,accesoAdmin,controllerAdmin.productsShow)   // Se muestra un producto en particular
-router.get('/admin/create',acceso,accesoAdmin,controllerAdmin.productsCreate) // Formulario de creaction de productos
-router.post('/admin/create',acceso,accesoAdmin,validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
+router.get('/admin/create',acceso,accesoAdmin, controllerAdmin.productsCreate) // Formulario de creaction de productos 
+router.post('/admin/create',acceso,accesoAdmin,validacionesProducto,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto 
 router.get('/admin/edit/:id',acceso,accesoAdmin, controllerAdmin.productEdit) // Formulario de edicion de un producto
 router.post('/admin/create',acceso,accesoAdmin,uploadFile.single('imagen') ,controllerAdmin.productsSave) // Accion de creacion de un producto
 router.get('/admin/edit/:id',acceso,accesoAdmin,controllerAdmin.productEdit) // Formulario de edicion de un producto
