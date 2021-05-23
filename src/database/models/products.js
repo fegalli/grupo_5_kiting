@@ -27,6 +27,9 @@ module.exports = (sequelize, dataTypes) =>{
         },
         styleId: {
             type: dataTypes.INTEGER
+        },
+        imageName: {
+            type: dataTypes.TEXT
         }
     }
     let config = {

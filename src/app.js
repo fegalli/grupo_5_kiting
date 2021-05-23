@@ -4,6 +4,9 @@ const app = express();
 const methodOverride = require('method-override') // Parte de la confing que nos deja usar put y delete
 const session = require('express-session') // habilitacion de cookies
 const cookieParser = require('cookie-parser')
+//app.use(express.static(__dirname+'/public'));
+
+
 
 // Seteo de elementos estaticos 
 app.use(express.static(path.resolve(__dirname, '../public')));

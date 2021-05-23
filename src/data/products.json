@@ -1,115 +1,16 @@
 [
   {
     "id": "71",
-    "name": "dice",
-    "comments": "Kite perfecto para surf",
-    "imagen": "1616464063692_img_.png",
-    "brand": "duotone",
     "price": "130000",
-    "colour": "red",
-    "size": "all",
-    "style": "surf"
-  },
-  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },
-  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  },  {
-    "id": "711",
-    "name": "dice",
-    "comments": "El mejor dice carve del momento",
-    "imagen": "1616880759436_img_.png",
-    "brand": "all",
-    "price": "180000",
-    "colour": "yellow",
-    "size": "all",
-    "style": "surf"
-  } 
+    "comments": "Kite perfecto para surf",
+    "createdAt": "18/5/2021",
+    "updatedAt": "18/5/2021",
+    "nameId": "1",
+    "sizeId": "1",
+    "brandId": "1",    
+    "colourId": "1",
+    "styleId": "1",
+    "imageName": "1616464063692_img_.png"
+  
+  }  
 ]
