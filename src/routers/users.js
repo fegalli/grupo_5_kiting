@@ -41,26 +41,18 @@ const validacionesLogin = [
     }).withMessage('Usurio o contraseña no coinciden'),
 ]
 const validacionesRegistro = [ 
-      body('email').isEmail().withMessage('Agregar un email válido'),
-      body('confirm').custom((value, {req}) =>{
-          if(req.body.password == value ){
-              return true    // Si yo retorno un true  no se muestra el error     
-          }else{
-              return false   // Si retorno un false si se muestra el error
-          }    
-      }).withMessage('Las contraseñas deben ser iguales'),
+      check('email').isEmail().withMessage('Agregar un email válido'),
       //Aqui valido que el email no este registrado previamente
-        body('email').custom( (value, {req}) =>{
+        body('email').custom( (value, req) =>{
             for (let i = 0; i < archivoUsuarios.length; i++) {
                 if (archivoUsuarios[i].email == req.body.email) {
-                    if(bcrypt.compareSync(value, archivoUsuarios[i].email)){
               return false;
             }else{
               return true;
             }
         }
     }
-        }).withMessage('El correo ya fue ingresado previamente'),
+    ).withMessage('El correo ya fue ingresado previamente'),
 // Chequeo que haya contraseña y que el minimo sea 8 caracteres
     check('password')
             .notEmpty().withMessage('Debes ingresar una contraseña').bail()
@@ -73,7 +65,7 @@ router.get('/login',userLogged, controllerUsers.login) // Se muestra la pantalla
 router.post('/login',userLogged, validacionesLogin,controllerUsers.ingresar) // Accion de loguearse
 router.get('/logout',acceso, controllerUsers.logout) // Accion de deslogueo
 router.get('/register',userLogged, controllerUsers.register)
-router.post('/register',userLogged,  controllerUsers.create)
+router.post('/register', validacionesRegistro,   controllerUsers.create) //userLogged
+//
 // validacionesRegistro,
-// 
 module.exports = router;
