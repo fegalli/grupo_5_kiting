@@ -5,11 +5,13 @@
     padding: 0px;
     margin: 0 ; 
     background-color:  #ffffff ;
+
 }
 main{
     max-width: 1279px;
     margin: auto;
     width: 90vw; 
+    filter: none;
 }
 img{
     width: 100%;  

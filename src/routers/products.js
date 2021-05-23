@@ -5,9 +5,11 @@ const path = require('path');
 const controllerProducts = require('../controllers/controllerProducts')
 
 //Requerir el middleware de prueba
-const acceso = require(path.resolve(__dirname,'../middlewares/acceso'));
+const acceso = require(path.resolve(__dirname,'../middlewares/acceso'))
+const wip = require(path.resolve(__dirname,'../middlewares/wip'));
 
-router.get('/productCart',acceso, controllerProducts.productCart) // Accion de ver la pantalla de carrito
+
+router.get('/productCart',wip, controllerProducts.productCart) // Accion de ver la pantalla de carrito
 //router.get('/detail/:id', controllerProducts.productDetail)
 //router.get("/products", controllerProducts.allProducts) // pantalla de productos
 router.post("/products", controllerProducts.find) // Accion de buscar un set de productos

@@ -26,7 +26,7 @@ module.exports = {
           let user = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10), 
-            role: req.body.role
+            role: req.body.userTypeSelector
           }
           let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json'), {
             encoding: 'utf-8'
@@ -70,7 +70,7 @@ module.exports = {
             if(respuesta == true){
               delete usuarioLogueado.password
               req.session.usuario = usuarioLogueado
-              res.redirect('/')
+              return res.redirect('/')
             } else {
               res.redirect('/register')
             }})}

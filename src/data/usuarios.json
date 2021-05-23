@@ -28,5 +28,18 @@
     "email": "mica@mica.com",
     "password": "$2a$10$6UAGUm/aluN5QkG7LuDKquV04jiRWPtZsL7XBvoAYUyH9ABnna9Uq",
     "role": 2
+  },
+  {
+    "email": "fede@fede.com",
+    "password": "$2a$10$HVYKR7UV/txUn9K4JvwWbOQ8.oIn6keXhHCsjXOB/wZWeaWY2y25y"
+  },
+  {
+    "email": "fede@fede.com",
+    "password": "$2a$10$o8RhyXa89oA6fWgdXcrAP.Es4i/u3ov68AwKeaktkH5NoRzuigAJC"
+  },
+  {
+    "email": "atila@atila.com",
+    "password": "$2a$10$0GXhNIUHcLewnEzDPLTVMOyCVIT1R0GcT/wPQtf4/7d/.heutomS2",
+    "role": "2"
   }
 ]

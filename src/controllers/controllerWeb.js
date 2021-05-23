@@ -12,6 +12,7 @@ module.exports = {
     //          // return res.sendFile(path.resolve(__dirname,"../views/home.ejs")) 
     // }
     index: (req,res) => {
+        res.locals.usuario = req.session.usuario
         const names = db.Name.findAll()
         const brands = db.Brand.findAll()
         const colours = db.Colour.findAll()

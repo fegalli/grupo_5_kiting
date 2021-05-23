@@ -33,6 +33,17 @@ app.set('view engine', 'ejs');  // Aca le estoy diciendo a express que voy a uti
 app.set('views', './src/views'); // con esta linea le digo a express en que carpeta estan mis vistas. Si no la utizo, por default express ira a buscar una carpeta que se llame -views-
 //PRO-TIP el metodo .set() permite definir configuraciones de express
 
+// Requiero middlewares
+// const acceso = require('./middlewares/acceso');
+// const accesoAdmin = require('./middlewares/accesoAdmin');
+// const userLogged = require('./middlewares/userLogged');
+
+// Uso middlewares
+// app.use(acceso)
+// app.use(accesoAdmin)
+// app.use(userLogged)
+
+
 // Llamado de rutas (o 'requerir rutas')
 const routerWeb   = require('./routers/web');
 const routerUsers = require('./routers/users');
@@ -46,12 +57,7 @@ app.use(routerUsers)
 app.use(routerProducts) 
 app.use(routerAdmin)
 
-// Configuracion necesaria para el uso de session
-app.use(session({
-    secret: 'grupo_5_kiting',
-    resave: false,
-    saveUninitialized: true
-}));
+
 
 //Levantar el servidor
 app.listen(process.env.PORT || '3000', () => console.log('Servidor corriendo en el puerto 3000'))
