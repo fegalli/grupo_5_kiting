@@ -41,5 +41,10 @@
     "email": "atila@atila.com",
     "password": "$2a$10$0GXhNIUHcLewnEzDPLTVMOyCVIT1R0GcT/wPQtf4/7d/.heutomS2",
     "role": "2"
+  },
+  {
+    "email": "soyadmin@gmail.com",
+    "password": "$2a$10$3rv26atMe5/c8dWz.SFd7ObXkRdbkhtpfSW0ZChA7oo0Lhcs2v7VO",
+    "role": "2"
   }
 ]
