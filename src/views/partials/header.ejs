@@ -3,13 +3,30 @@
     <div class="header">
         <div id="logo-kiting">KITING</div>
         <div class="header-links">
+            <% if(locals.usuario != null && locals.usuario.role == 2){ %>
+            <!-- Esto lo veo con permiso admin -->
             <button id='buttonAdmin'><a   href ="/admin/products">Admin</a></button>
+            <% } %>
+
+            <!-- Esto lo veo siempre -->
             <a href="/">Inicio</a>
+
+            <% if(locals.usuario != null){ %>
+            <!-- Esto lo veo siempre que este logueado -->
+            <a id="logout"  href="/logout">Salir</a>  
+            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>  
+            <%} else {%> 
+            <!-- Esto lo veo cuando estoy deslogueado -->
             <a id='login' href="/login">Ingresá</a>
             <a id="register" href="/register">Registrate</a>
-            <a id="logout"  href="/logout">Salir</a>  
-            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>     
+            <% } %>
+
+            <!-- Consoles para probar durante la implementacion -->
+            <!-- <%console.log(locals.usuario)%>
+            <% if(locals.usuario != null){
+                console.log(locals.usuario.role)
+            } %> -->
         </div> 
     </div>
-    <script src="js/header.js"></script>
+
 </header> 
