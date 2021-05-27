@@ -14,6 +14,7 @@ module.exports = {
                 productos
             })
         })
+        
      },
     //Se muestra el formualrio de creacion
      productsCreate : (req,res) => {
@@ -36,13 +37,14 @@ module.exports = {
     // Accion de crear un producto
     productsSave : (req,res) => {
         db.Product.create({
-            comments : req.body.comments,
-            price    : req.body.price,
-            nameId   : req.body.name,
-            sizeId   : req.body.size,
-            colourId : req.body.colour,
-            brandId  : req.body.brand,
-            styleId  : req.body.style 
+            comments  : req.body.comments,
+            price     : req.body.price,
+            nameId    : req.body.name,
+            sizeId    : req.body.size,
+            colourId  : req.body.colour,
+            brandId   : req.body.brand,
+            imageName : req.file.filename,
+            styleId   : req.body.style 
         })
         res.redirect('/admin/products')
     },
@@ -75,6 +77,7 @@ module.exports = {
             sizeId   : req.body.size,
             colourId : req.body.colour,
             brandId  : req.body.brand,
+            imageName : req.file.filename,
             styleId  : req.body.style 
         },{
             where : {

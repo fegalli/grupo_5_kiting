@@ -9,7 +9,7 @@ const acceso = require(path.resolve(__dirname,'../middlewares/acceso'))
 const wip = require(path.resolve(__dirname,'../middlewares/wip'));
 
 
-router.get('/productCart',wip, controllerProducts.productCart) // Accion de ver la pantalla de carrito
+router.get('/productCart',acceso, wip, controllerProducts.productCart) // Accion de ver la pantalla de carrito
 //router.get('/detail/:id', controllerProducts.productDetail)
 //router.get("/products", controllerProducts.allProducts) // pantalla de productos
 router.post("/products", controllerProducts.find) // Accion de buscar un set de productos

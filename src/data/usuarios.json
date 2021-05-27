@@ -41,5 +41,15 @@
     "email": "atila@atila.com",
     "password": "$2a$10$0GXhNIUHcLewnEzDPLTVMOyCVIT1R0GcT/wPQtf4/7d/.heutomS2",
     "role": "2"
+  },
+  {
+    "email": "maru@maru.com",
+    "password": "$2a$10$BDTGCY4UCQiohh4R78sj/uBnsjH28Nc8lAATtbmLyhK7T6tvoAkcu",
+    "role": "2"
+  },
+  {
+    "email": "fedeprueba@fede.com",
+    "password": "$2a$10$ofjO5qCS3dm2NvZsfXHt4uWPaiP0.0hetqxrEaX5QY2NPZPRJWmPC",
+    "role": "1"
   }
 ]

@@ -52,6 +52,8 @@ const routerWeb   = require('./routers/web');
 const routerUsers = require('./routers/users');
 const routerProducts = require('./routers/products')
 const routerAdmin = require('./routers/admin');
+const apiStylesRouter = require('./routers/api/styles')
+const apiProductsRouter = require('./routers/api/products')
 
 
 // Para usar rutas
@@ -59,9 +61,9 @@ app.use(routerWeb);
 app.use(routerUsers)
 app.use(routerProducts) 
 app.use(routerAdmin)
-
-
+app.use('/api/styles',apiStylesRouter)
+app.use('/api/products',apiProductsRouter)
 
 //Levantar el servidor
-app.listen(process.env.PORT || '3000', () => console.log('Servidor corriendo en el puerto 3000'))
+app.listen(process.env.PORT || '3001', () => console.log('Servidor corriendo en el puerto 3001'))
 
