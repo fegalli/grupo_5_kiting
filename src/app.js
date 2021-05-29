@@ -54,6 +54,7 @@ const routerProducts = require('./routers/products')
 const routerAdmin = require('./routers/admin');
 const apiStylesRouter = require('./routers/api/styles')
 const apiProductsRouter = require('./routers/api/products')
+const apiHomeRouter = require('./routers/api/home')
 
 
 // Para usar rutas
@@ -63,6 +64,8 @@ app.use(routerProducts)
 app.use(routerAdmin)
 app.use('/api/styles',apiStylesRouter)
 app.use('/api/products',apiProductsRouter)
+app.use('/api/home',apiHomeRouter)
+
 
 //Levantar el servidor
 app.listen(process.env.PORT || '3001', () => console.log('Servidor corriendo en el puerto 3001'))

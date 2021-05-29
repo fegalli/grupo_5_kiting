@@ -39,22 +39,46 @@ module.exports = {
             })
     },
     newest: (req,res) => {
-        db.Product.findAll(
-            // {
-            //   having : {createdAt : max(createdAt)                    
-            // }
-            // }
-            )
+        db.Product.findAll({
+            include: [db.Brand, db.Size, db.Colour, db.Name, db.Style]
+          })
         .then(products => {
+            let newest = (productos) =>{
+                let maxId = 0
+                let newestProduct
+                for(let i =1; i<productos.length ; i++){
+                  if(productos[i].id > maxId){
+                    maxId = productos[i].id
+                    newestProduct = productos[i]
+                  }
+                }
+                return newestProduct 
+              }
+            let lastProduct = newest(products)
             let respuesta = {
                 meta: {
                     status : 200,
-                    total: products.length,
-                    url: 'api/products'
+                    total: 1,
+                    url: 'api/products/newest'
                 },
-                data: products
+                data: lastProduct
             }
                 res.json(respuesta);
             })
-    }   
+    }
 }
+
+
+// let newest = (productos) => {
+//     let maxDate 
+//     let newestProduct 
+//     for (let i = 0; i< productos.length; i++) {
+        
+//         // if( productos[i].createdAt > maxDate){
+//         //     maxDate == productos[i].createdAt
+//         //     newestProduct == productos[i]
+//         maxDate == productos[i].createdAt
+//         newestProduct == productos[i]
+//         }
+//     return newestProduct
+// }; 

@@ -42,10 +42,15 @@ module.exports = {
           usersJSON = JSON.stringify(users, null, 2);
           fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
           res.redirect('/');
-        } else {
-            return res.render(path.resolve(__dirname, '../views/users/register'), {
-            errors: errors.errors,  old: req.body
-          });
+        } else { 
+          
+          return res.render('./users/register', { errors: errors.errors,
+            old: req.body,
+            css: "users/register.css"
+        })
+            //return res.render(path.resolve(__dirname, '../views/users/register'), {
+            //errors: errors.errors,  old: req.body
+          //});
         }
     },
     // ingresar: (req,res) =>{
